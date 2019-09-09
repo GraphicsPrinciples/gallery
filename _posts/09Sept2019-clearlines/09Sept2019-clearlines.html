@@ -984,17 +984,18 @@
 <div class="layout-chunk" data-layout="l-body">
 <p><img src="09Sept2019-clearlines_files/figure-html5/unnamed-chunk-4-1.png" width="624" data-radix-preview=1 /></p>
 </div>
+<p>Below is the code required to reproduce these plots used in this post.</p>
 <div class="layout-chunk" data-layout="l-body">
 <pre class="r"><code>
 library(tidyverse)
 
-# Set global theme
+## Set global theme
 theme_set(theme_light())
 
-# Set seed for reproducibility 
+## Set seed for reproducibility 
 set.seed(65)
 
-# Generate dummy data
+## Generate dummy data
 df &lt;- data.frame(
   Treatment = rep(c(&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;, &quot;E&quot;, &quot;F&quot;),
                   each = 4),
@@ -1016,7 +1017,47 @@ df %&gt;% ggplot(aes(x = Visit, y = Outcome, group = Treatment, color = Treatmen
   geom_line(size = 1.1, aes(linetype = Treatment)) +
   geom_point(size = 2.5, aes(shape = Treatment)) +
   scale_x_continuous(limits = c(1, 4), breaks = c(1, 2, 3, 4)) +
-  scale_y_continuous(limits = c(0, 5), breaks = c(0, 2.5, 5)) </code></pre>
+  scale_y_continuous(limits = c(0, 5), breaks = c(0, 2.5, 5)) 
+
+## Plot only four lines
+df %&gt;% 
+  filter(Treatment %in% c(&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;)) %&gt;%
+  ggplot(aes(x = Visit, y = Outcome, group = Treatment, color = Treatment)) +
+  geom_line(size = 1.2) +
+  scale_x_continuous(limits = c(1, 4), breaks = c(1, 2, 3, 4)) +
+  scale_y_continuous(limits = c(0, 5), breaks = c(0, 2.5, 5)) 
+
+## Direct labels on plot
+df %&gt;% 
+  filter(Treatment %in% c(&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;)) %&gt;%
+  ggplot(aes(x = Visit, y = Outcome, group = Treatment, color = Treatment)) +
+  geom_line(size = 1.2) +
+  scale_x_continuous(limits = c(1, 4), breaks = c(1, 2, 3, 4)) +
+  scale_y_continuous(limits = c(0, 5), breaks = c(0, 2.5, 5)) +
+  geom_text(
+    data = subset(df, Visit == &quot;4&quot; &amp; (Treatment %in% c(&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;))),
+    aes(label = Treatment),
+    position = &quot;nudge&quot;,
+    hjust = -0.5,
+    vjust = 0.5,
+    color = &quot;black&quot;
+  ) +
+  theme(legend.position = &quot;none&quot;)
+
+## Small multiples plot
+df %&gt;% 
+  ggplot(aes(x = Visit, y = Outcome, group = Treatment)) +
+  geom_line(
+    data = transform(df, Treatment = NULL),
+    aes(x = Visit, y = Outcome, group = Treatment2),
+    size = 0.8,
+    color = &quot;darkgray&quot;,
+    alpha = 0.45
+  ) +
+  geom_line(size = 1.2, color = &quot;red&quot;, alpha = 0.9) +
+  scale_x_continuous(limits = c(1, 4), breaks = c(1, 2, 3, 4)) +
+  scale_y_continuous(limits = c(0, 5), breaks = c(0, 2.5, 5)) +
+  facet_wrap( ~ Treatment) </code></pre>
 </div>
 <div class="layout-chunk" data-layout="l-body">
 <pre class="r"><code>

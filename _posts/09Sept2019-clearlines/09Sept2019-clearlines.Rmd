@@ -120,16 +120,18 @@ df %>%
 
 ```
 
+Below is the code required to reproduce these plots used in this post. 
+
 ```{r, eval=FALSE, echo=TRUE}
 library(tidyverse)
 
-# Set global theme
+## Set global theme
 theme_set(theme_light())
 
-# Set seed for reproducibility 
+## Set seed for reproducibility 
 set.seed(65)
 
-# Generate dummy data
+## Generate dummy data
 df <- data.frame(
   Treatment = rep(c("A", "B", "C", "D", "E", "F"),
                   each = 4),
@@ -153,7 +155,45 @@ df %>% ggplot(aes(x = Visit, y = Outcome, group = Treatment, color = Treatment))
   scale_x_continuous(limits = c(1, 4), breaks = c(1, 2, 3, 4)) +
   scale_y_continuous(limits = c(0, 5), breaks = c(0, 2.5, 5)) 
 
+## Plot only four lines
+df %>% 
+  filter(Treatment %in% c("A", "B", "C", "D")) %>%
+  ggplot(aes(x = Visit, y = Outcome, group = Treatment, color = Treatment)) +
+  geom_line(size = 1.2) +
+  scale_x_continuous(limits = c(1, 4), breaks = c(1, 2, 3, 4)) +
+  scale_y_continuous(limits = c(0, 5), breaks = c(0, 2.5, 5)) 
 
+## Direct labels on plot
+df %>% 
+  filter(Treatment %in% c("A", "B", "C", "D")) %>%
+  ggplot(aes(x = Visit, y = Outcome, group = Treatment, color = Treatment)) +
+  geom_line(size = 1.2) +
+  scale_x_continuous(limits = c(1, 4), breaks = c(1, 2, 3, 4)) +
+  scale_y_continuous(limits = c(0, 5), breaks = c(0, 2.5, 5)) +
+  geom_text(
+    data = subset(df, Visit == "4" & (Treatment %in% c("A", "B", "C", "D"))),
+    aes(label = Treatment),
+    position = "nudge",
+    hjust = -0.5,
+    vjust = 0.5,
+    color = "black"
+  ) +
+  theme(legend.position = "none")
+
+## Small multiples plot
+df %>% 
+  ggplot(aes(x = Visit, y = Outcome, group = Treatment)) +
+  geom_line(
+    data = transform(df, Treatment = NULL),
+    aes(x = Visit, y = Outcome, group = Treatment2),
+    size = 0.8,
+    color = "darkgray",
+    alpha = 0.45
+  ) +
+  geom_line(size = 1.2, color = "red", alpha = 0.9) +
+  scale_x_continuous(limits = c(1, 4), breaks = c(1, 2, 3, 4)) +
+  scale_y_continuous(limits = c(0, 5), breaks = c(0, 2.5, 5)) +
+  facet_wrap( ~ Treatment) 
 ```
 
 ```{r, echo=TRUE}
