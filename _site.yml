@@ -21,7 +21,6 @@ navbar:
       href: https://github.com/GraphicsPrinciples
 collections:
   posts:
-    disqus: GraphicsPrinciples-gallery
     share: [twitter, linkedin]
     citations: false
 output: radix::radix_article
