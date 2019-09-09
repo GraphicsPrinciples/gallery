@@ -1,8 +1,8 @@
 [
   {
     "path": "posts/09Sept2019-clearlines/",
-    "title": "Clear lines - clear signal*",
-    "description": "*Based on the chapter “Clean lines, clear signal” in the textbook: “The Wall Street Journal Guide to Information Graphics: The Dos and Don'ts of Presenting Data, Facts, and Figures.” Dona M. Wong. December 16, 2013. ISBN: 978-0-393-34728-9.",
+    "title": "Clear lines - clear signal",
+    "description": "Weniger aber besser.",
     "author": [
       {
         "name": "Graphics principles",
@@ -11,10 +11,12 @@
     ],
     "date": "2019-09-09",
     "categories": [
-      "line plot"
+      "line plot",
+      "symbols",
+      "clarity"
     ],
     "preview": "posts/09Sept2019-clearlines/09Sept2019-clearlines_files/figure-html5/unnamed-chunk-4-1.png",
-    "last_modified": "2019-09-09T22:56:06+02:00",
+    "last_modified": "2019-09-09T23:51:40+02:00",
     "preview_width": 1248,
     "preview_height": 768
   }
