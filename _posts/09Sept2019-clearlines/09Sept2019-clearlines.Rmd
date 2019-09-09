@@ -1,7 +1,7 @@
 ---
-title: "Clear lines - clear signal"
+title: "Clear lines, clear signal"
 description: |
-  Weniger aber besser. 
+  "Weniger aber besser (Less but better)" - Dieter Rams.
 author:
   - name: "Graphics principles"
     url: https://graphicsprinciples.github.io/
@@ -46,7 +46,7 @@ df <- data.frame(
 )
 ```
 
-_This post is based on the chapter “Clean lines, clear signal” in the textbook by Dona Wong: “The Wall Street Journal Guide to Information Graphics: The Dos and Don'ts of Presenting Data, Facts, and Figures” [@wong2010wall]._
+_This post is based on the chapter “clean lines, clear signal” in the textbook by Dona Wong: “The Wall Street Journal Guide to Information Graphics: The Dos and Don'ts of Presenting Data, Facts, and Figures” [@wong2010wall]._
 
 Often we are faced with the problem of presenting comparisons of longitudinal data over many groups (e.g., multiple treatment arms, subgroup categories or individual patient time courses). It is tempting to differentiate each line by fully utilising the array of dashes and shape markers that are available within our favorite software package. But this often obscures the lines which carry the information thereby reducing clarity. 
 
@@ -98,7 +98,7 @@ df %>%
 
 ```
 
-If it is not possible to limit the number of comparisons to four or less groups, consider using a panel of graphs (i.e. small multiple graphs on the same scale). This strategy allows all information to present on a single graph, focusing each comparison of interest to a single panel. 
+If it is not possible to limit the number of comparisons to four or less groups, consider using a panel of graphs (i.e. small multiple graphs on the same scale). This strategy allows all information to be presented on one graph, focusing each comparison of interest to a single panel. 
  
 
 
