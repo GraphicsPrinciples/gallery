@@ -1,0 +1,19 @@
+[
+  {
+    "path": "posts/09Sept2019-clearlines/",
+    "title": "Clear lines - clear signal*",
+    "description": "*Based on the chapter “Clean lines, clear signal” in the textbook: “The Wall Street Journal Guide to Information Graphics: The Dos and Don'ts of Presenting Data, Facts, and Figures.” Dona M. Wong. December 16, 2013. ISBN: 978-0-393-34728-9.",
+    "author": [
+      {
+        "name": "Mark Baillie",
+        "url": "https://graphicsprinciples.github.io/"
+      }
+    ],
+    "date": "2019-09-09",
+    "categories": [
+      "line plot"
+    ],
+    "preview": "https://raw.githubusercontent.com/GraphicsPrinciples/GraphicsPrinciples.github.io/master/assets/2018-11-06_thumbnail.png",
+    "last_modified": "2019-09-09T21:12:07+02:00"
+  }
+]

@@ -1,0 +1,27 @@
+name: "Graphics principles"
+title: "Graph gallery"
+description: |
+  A tutorial on effective visual communication for the quantitative scientist.
+output_dir: "."
+base_url: https://graphicsprinciples.github.io/
+canonical_url: https://graphicsprinciples.github.io/gallery
+navbar:
+  right:
+    - text: "Home"
+      href: https://graphicsprinciples.github.io/
+    - text: "Tutorial"
+      href: https://graphicsprinciples.github.io/tutorial.html
+    - text: "Case studies"
+      href: https://graphicsprinciples.github.io/tutorial-case-studies
+    - text: "Gallery"
+      href: index.html
+    - text: "About"
+      href: https://graphicsprinciples.github.io/initiative.html
+    - icon: fab fa-github
+      href: https://github.com/GraphicsPrinciples
+collections:
+  posts:
+    disqus: GraphicsPrinciples-gallery
+    share: [twitter, linkedin]
+    citations: false
+output: radix::radix_article
