@@ -12,7 +12,7 @@ categories:
 draft: FALSE
 output:
   radix::radix_article:
-    self_contained: TRUE
+    self_contained: FALSE
 ---
 
 ```{r setup, include=FALSE}
@@ -143,6 +143,7 @@ If it is not possible to limit the number of comparisons to four or less groups,
 
 
 ```{r, preview=TRUE}
+
 ggplot(df, aes(x = Visit, y = Outcome, group = Treatment)) +
   geom_line (
     data = transform(df, Treatment = NULL),
