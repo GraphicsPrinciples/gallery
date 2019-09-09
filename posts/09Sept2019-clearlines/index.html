@@ -60,7 +60,7 @@
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["09Sept2019-clearlines_files/bowser-1.9.3/bowser.min.js","09Sept2019-clearlines_files/distill-2.2.21/template.v2.js","09Sept2019-clearlines_files/figure-html5/unnamed-chunk-1-1.png","09Sept2019-clearlines_files/figure-html5/unnamed-chunk-2-1.png","09Sept2019-clearlines_files/figure-html5/unnamed-chunk-3-1.png","09Sept2019-clearlines_files/figure-html5/unnamed-chunk-4-1.png","09Sept2019-clearlines_files/jquery-1.11.3/jquery.min.js","09Sept2019-clearlines_files/webcomponents-2.0.0/webcomponents.js","lit.bib"]}
+  {"type":"character","attributes":{},"value":["09Sept2019-clearlines_files/bowser-1.9.3/bowser.min.js","09Sept2019-clearlines_files/distill-2.2.21/template.v2.js","09Sept2019-clearlines_files/figure-html5/unnamed-chunk-1-1.png","09Sept2019-clearlines_files/figure-html5/unnamed-chunk-2-1.png","09Sept2019-clearlines_files/figure-html5/unnamed-chunk-3-1.png","09Sept2019-clearlines_files/figure-html5/unnamed-chunk-4-1.png","09Sept2019-clearlines_files/figure-html5/unnamed-chunk-5-1.png","09Sept2019-clearlines_files/jquery-1.11.3/jquery.min.js","09Sept2019-clearlines_files/webcomponents-2.0.0/webcomponents.js","lit.bib"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 
@@ -1348,6 +1348,84 @@ document.addEventListener('DOMContentLoaded', function() {
 <p>If it is not possible to limit the number of comparisons to four or less groups, consider using a panel of graphs (i.e. small multiple graphs on the same scale). This strategy allows all information to be presented on one graph, focusing each comparison of interest to a single panel.</p>
 <div class="layout-chunk" data-layout="l-body">
 <p><img src="09Sept2019-clearlines_files/figure-html5/unnamed-chunk-4-1.png" width="624" data-radix-preview=1 /></p>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+library(tidyverse)
+
+# Set global theme
+theme_set(theme_light())
+
+# Set seed for reproducibility 
+set.seed(65)
+
+# Generate dummy data
+df &lt;- data.frame(
+  Treatment = rep(c(&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;, &quot;E&quot;, &quot;F&quot;),
+                  each = 4),
+  Treatment2 = rep(c(&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;, &quot;E&quot;, &quot;F&quot;),
+                  each = 4),
+  Visit = rep(c(1, 2, 3, 4), 6),
+  Outcome = c(
+    rnorm(4, 2, 0.5),
+    rnorm(4, 3, 0.5),
+    rnorm(4, 2, 1),
+    rnorm(4, 3, 0.5),
+    rnorm(4, 2.5, 1),
+    rnorm(4, 3, 0.2)
+  )
+)
+
+## Plot all six lines
+df %&gt;% ggplot(aes(x = Visit, y = Outcome, group = Treatment, color = Treatment)) +
+  geom_line(size = 1.1, aes(linetype = Treatment)) +
+  geom_point(size = 2.5, aes(shape = Treatment)) +
+  scale_x_continuous(limits = c(1, 4), breaks = c(1, 2, 3, 4)) +
+  scale_y_continuous(limits = c(0, 5), breaks = c(0, 2.5, 5)) </code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+sessionInfo()</code></pre>
+<pre><code>
+R version 3.5.3 (2019-03-11)
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+Running under: Windows 10 x64 (build 16299)
+
+Matrix products: default
+
+locale:
+[1] LC_COLLATE=English_United States.1252 
+[2] LC_CTYPE=English_United States.1252   
+[3] LC_MONETARY=English_United States.1252
+[4] LC_NUMERIC=C                          
+[5] LC_TIME=English_United States.1252    
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods  
+[7] base     
+
+other attached packages:
+[1] forcats_0.4.0   stringr_1.4.0   dplyr_0.8.0.1   purrr_0.3.2    
+[5] readr_1.3.1     tidyr_0.8.3     tibble_2.1.1    ggplot2_3.1.1  
+[9] tidyverse_1.2.1
+
+loaded via a namespace (and not attached):
+ [1] Rcpp_1.0.1       cellranger_1.1.0 plyr_1.8.4      
+ [4] pillar_1.3.1     compiler_3.5.3   tools_3.5.3     
+ [7] digest_0.6.20    lubridate_1.7.4  jsonlite_1.6    
+[10] evaluate_0.13    nlme_3.1-137     gtable_0.3.0    
+[13] lattice_0.20-38  pkgconfig_2.0.2  rlang_0.4.0     
+[16] radix_0.6        cli_1.1.0        rstudioapi_0.10 
+[19] yaml_2.2.0       haven_2.1.0      xfun_0.6        
+[22] withr_2.1.2      xml2_1.2.0       httr_1.4.0      
+[25] knitr_1.22       hms_0.4.2        generics_0.0.2  
+[28] grid_3.5.3       tidyselect_0.2.5 glue_1.3.1      
+[31] R6_2.4.0         readxl_1.3.1     rmarkdown_1.12  
+[34] modelr_0.1.4     magrittr_1.5     backports_1.1.3 
+[37] scales_1.0.0     htmltools_0.3.6  rvest_0.3.2     
+[40] assertthat_0.2.1 colorspace_1.4-1 stringi_1.4.3   
+[43] lazyeval_0.2.2   munsell_0.5.0    broom_0.5.2     
+[46] crayon_1.3.4    </code></pre>
 </div>
 <div id="refs" class="references" role="doc-bibliography">
 <div id="ref-wong2010wall">

@@ -52,7 +52,7 @@ Often we are faced with the problem of presenting comparisons of longitudinal da
 
 > Weniger aber besser (Less but better) - Dieter Rams.
  
-```{r}
+```{r, echo = FALSE, cap = "A line plot of six treatment time courses."}
 
 df %>% ggplot(aes(x = Visit, y = Outcome, group = Treatment, color = Treatment)) +
   geom_line(size = 1.1, aes(linetype = Treatment)) +
@@ -118,5 +118,45 @@ df %>%
   scale_y_continuous(limits = c(0, 5), breaks = c(0, 2.5, 5)) +
   facet_wrap( ~ Treatment) 
 
+```
+
+```{r, eval=FALSE, echo=TRUE}
+library(tidyverse)
+
+# Set global theme
+theme_set(theme_light())
+
+# Set seed for reproducibility 
+set.seed(65)
+
+# Generate dummy data
+df <- data.frame(
+  Treatment = rep(c("A", "B", "C", "D", "E", "F"),
+                  each = 4),
+  Treatment2 = rep(c("A", "B", "C", "D", "E", "F"),
+                  each = 4),
+  Visit = rep(c(1, 2, 3, 4), 6),
+  Outcome = c(
+    rnorm(4, 2, 0.5),
+    rnorm(4, 3, 0.5),
+    rnorm(4, 2, 1),
+    rnorm(4, 3, 0.5),
+    rnorm(4, 2.5, 1),
+    rnorm(4, 3, 0.2)
+  )
+)
+
+## Plot all six lines
+df %>% ggplot(aes(x = Visit, y = Outcome, group = Treatment, color = Treatment)) +
+  geom_line(size = 1.1, aes(linetype = Treatment)) +
+  geom_point(size = 2.5, aes(shape = Treatment)) +
+  scale_x_continuous(limits = c(1, 4), breaks = c(1, 2, 3, 4)) +
+  scale_y_continuous(limits = c(0, 5), breaks = c(0, 2.5, 5)) 
+
+
+```
+
+```{r, echo=TRUE}
+sessionInfo()
 ```
 
