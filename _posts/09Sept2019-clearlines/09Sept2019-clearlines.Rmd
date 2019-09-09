@@ -1,0 +1,164 @@
+---
+title: "Clear lines - clear signal*"
+description: |
+  *Based on the chapter “Clean lines, clear signal” in the textbook: “The Wall Street Journal Guide to Information Graphics: The Dos and Don'ts of Presenting Data, Facts, and Figures.” Dona M. Wong. December 16, 2013. ISBN: 978-0-393-34728-9. 
+
+author:
+  - name: "Mark Baillie"
+    url: https://graphicsprinciples.github.io/
+date: "`r Sys.Date()`"
+categories:
+  - line plot
+draft: FALSE
+preview: https://raw.githubusercontent.com/GraphicsPrinciples/GraphicsPrinciples.github.io/master/assets/2018-11-06_thumbnail.png
+output:
+  radix::radix_article:
+    self_contained: TRUE
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+library(ggplot2)
+
+# Define a minimal theme
+th_close <- theme(
+  axis.title.y = element_blank(),
+  axis.text.y = element_blank(),
+  axis.title.x = element_blank(),
+  axis.text.x = element_blank(
+  )
+) 
+
+# Set seed for reproducibility 
+set.seed(65)
+```
+
+Often we are faced with the problem of presenting comparisons of longitudinal data over many groups (e.g., multiple treatment arms, subgroup categories or individual patient time courses). It is tempting to differentiate each line by fully utilising the array of dashes and shape markers that are available within our favorite software package. But this often obscures the lines which carry the information thereby reducing clarity. 
+ 
+
+First of all lets generate data to provide a concrete common example.
+
+```{r}
+df <- data.frame(
+  Treatment = rep(c("A", "B", "C", "D", "E", "F"),
+                  each = 4),
+  trt2 = rep(c("A", "B", "C", "D", "E", "F"),
+             each = 4),
+  Visit = rep(c(1, 2, 3, 4), 6),
+  Response = c(
+    rnorm(4, 2, 0.5),
+    rnorm(4, 3, 0.5),
+    rnorm(4, 2, 1),
+    rnorm(4, 3, 0.5),
+    rnorm(4, 2.5, 1),
+    rnorm(4, 3, 0.2)
+  )
+)
+```
+
+Plot all treatments with differing lines and symbols to ensure differentiation. 
+
+```{r}
+
+ggplot(df, aes(
+  x = Visit,
+  y = Response,
+  group = Treatment,
+  color = Treatment
+)) +
+  geom_line(size = 1.1, aes(linetype = Treatment)) +
+  geom_point(size = 2.5, aes(shape = Treatment)) +
+  scale_x_continuous(limits = c(1, 4), breaks = c(1, 2, 3, 4)) +
+  scale_y_continuous(limits = c(0, 5), breaks = c(0, 2.5, 5)) +
+  scale_color_brewer(palette = "Set1") +
+  th_close
+
+```
+
+There are alternative strategies to this problem depending on the purpose of your graph. For example, if it is possible to limit the number of comparison groups to four or less per graph then solid lines can be used exclusively. Varying weights and shades do the work of differentiating the lines removing the need for symbols and different line styles. 
+
+ 
+
+```{r}
+ggplot(
+  subset(
+    df,
+    Treatment == "A" |
+      Treatment == "B" | Treatment == "C" | Treatment == "D"
+  ),
+  aes(
+    x = Visit,
+    y = Response,
+    group = Treatment,
+    color = Treatment
+  )
+) +
+  geom_line(size = 1.2) +
+  scale_x_continuous(limits = c(1, 4), breaks = c(1, 2, 3, 4)) +
+  scale_y_continuous(limits = c(0, 5), breaks = c(0, 2.5, 5)) +
+  scale_color_brewer(palette = "Set1") +
+  th_close
+```
+
+Direct labelling of each line can further support differentiation between groups when it is possible to apply without clashes. 
+
+
+```{r}
+ggplot(
+  subset(
+    df,
+    Treatment == "A" |
+      Treatment == "B" | Treatment == "C" | Treatment == "D"
+  ),
+  aes(
+    x = Visit,
+    y = Response,
+    group = Treatment,
+    color = Treatment
+  )
+) +
+  geom_line(size = 1.2) +
+  scale_x_continuous(limits = c(1, 4), breaks = c(1, 2, 3, 4)) +
+  scale_y_continuous(limits = c(0, 5), breaks = c(0, 2.5, 5)) +
+  scale_color_brewer(palette = "Set1") +
+  th_close +
+  geom_text(
+    data = subset(
+      df,
+      Visit == "4" &
+        (
+          Treatment == "A" |
+            Treatment == "B" | Treatment == "C" | Treatment == "D"
+        )
+    ),
+    aes(label = Treatment),
+    position = "nudge",
+    hjust = -0.5,
+    vjust = 0.5,
+    color = "black"
+  ) +
+  theme(legend.position = "none")
+
+```
+
+If it is not possible to limit the number of comparisons to four or less groups, consider using a panel of graphs (i.e. small multiple graphs on the same scale). This strategy allows all information to present on a single graph, focusing each comparison of interest to a single panel. 
+ 
+
+
+```{r}
+ggplot(df, aes(x = Visit, y = Response, group = Treatment)) +
+  geom_line (
+    data = transform(df, Treatment = NULL),
+    aes(x = Visit, y = Response, group = trt2),
+    size = 0.65,
+    color = "darkgray"
+  ) +
+  geom_line(size = 1.1, color = "red") +
+  scale_x_continuous(limits = c(1, 4), breaks = c(1, 2, 3, 4)) +
+  scale_y_continuous(limits = c(0, 5), breaks = c(0, 2.5, 5)) +
+  facet_wrap ( ~ Treatment) +
+  th_close
+
+```
+
