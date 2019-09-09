@@ -1,14 +1,16 @@
 ---
-title: "Clear lines - clear signal*"
+title: "Clear lines - clear signal"
 description: |
-  *Based on the chapter “Clean lines, clear signal” in the textbook: “The Wall Street Journal Guide to Information Graphics: The Dos and Don'ts of Presenting Data, Facts, and Figures.” Dona M. Wong. December 16, 2013. ISBN: 978-0-393-34728-9. 
-
+  Weniger aber besser. 
 author:
   - name: "Graphics principles"
     url: https://graphicsprinciples.github.io/
 date: "`r Sys.Date()`"
 categories:
   - line plot
+  - symbols
+  - clarity 
+bibliography: lit.bib
 draft: FALSE
 output:
   radix::radix_article:
@@ -18,19 +20,10 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 
-library(ggplot2)
+library(tidyverse)
 
 # Set global theme
 theme_set(theme_light())
-
-# Redefine a minimal theme
-th_close <- theme(
-  axis.title.y = element_blank(),
-  axis.text.y = element_blank(),
-  axis.title.x = element_blank(),
-  axis.text.x = element_blank(
-  )
-) 
 
 # Set seed for reproducibility 
 set.seed(65)
@@ -53,81 +46,48 @@ df <- data.frame(
 )
 ```
 
+_This post is based on the chapter “Clean lines, clear signal” in the textbook by Dona Wong: “The Wall Street Journal Guide to Information Graphics: The Dos and Don'ts of Presenting Data, Facts, and Figures” [@wong2010wall]._
+
 Often we are faced with the problem of presenting comparisons of longitudinal data over many groups (e.g., multiple treatment arms, subgroup categories or individual patient time courses). It is tempting to differentiate each line by fully utilising the array of dashes and shape markers that are available within our favorite software package. But this often obscures the lines which carry the information thereby reducing clarity. 
+
+> Weniger aber besser (Less but better) - Dieter Rams.
  
 ```{r}
 
-ggplot(df, aes(
-  x = Visit,
-  y = Outcome,
-  group = Treatment,
-  color = Treatment
-)) +
+df %>% ggplot(aes(x = Visit, y = Outcome, group = Treatment, color = Treatment)) +
   geom_line(size = 1.1, aes(linetype = Treatment)) +
   geom_point(size = 2.5, aes(shape = Treatment)) +
   scale_x_continuous(limits = c(1, 4), breaks = c(1, 2, 3, 4)) +
-  scale_y_continuous(limits = c(0, 5), breaks = c(0, 2.5, 5)) +
-  scale_color_brewer(palette = "Set1") +
-  th_close
+  scale_y_continuous(limits = c(0, 5), breaks = c(0, 2.5, 5)) 
 
 ```
 
-There are alternative strategies to this problem depending on the purpose of your graph. For example, if it is possible to limit the number of comparison groups to four or less per graph then solid lines can be used exclusively. Varying weights and shades do the work of differentiating the lines removing the need for symbols and different line styles. 
+There are alternative strategies to address this problem depending on the purpose of your graph. For example, if it is possible to limit the number of comparison groups to four or less per graph then solid lines can be used exclusively. Varying weights and shades do the work of differentiating the lines removing the need for symbols and different line styles. 
 
  
 
 ```{r}
-ggplot(
-  subset(
-    df,
-    Treatment == "A" |
-      Treatment == "B" | Treatment == "C" | Treatment == "D"
-  ),
-  aes(
-    x = Visit,
-    y = Outcome,
-    group = Treatment,
-    color = Treatment
-  )
-) +
+df %>% 
+  filter(Treatment %in% c("A", "B", "C", "D")) %>%
+  ggplot(aes(x = Visit, y = Outcome, group = Treatment, color = Treatment)) +
   geom_line(size = 1.2) +
   scale_x_continuous(limits = c(1, 4), breaks = c(1, 2, 3, 4)) +
-  scale_y_continuous(limits = c(0, 5), breaks = c(0, 2.5, 5)) +
-  scale_color_brewer(palette = "Set1") +
-  th_close
+  scale_y_continuous(limits = c(0, 5), breaks = c(0, 2.5, 5)) 
+
 ```
 
 Direct labelling of each line can further support differentiation between groups when it is possible to apply without clashes. 
 
 
 ```{r}
-ggplot(
-  subset(
-    df,
-    Treatment == "A" |
-      Treatment == "B" | Treatment == "C" | Treatment == "D"
-  ),
-  aes(
-    x = Visit,
-    y = Outcome,
-    group = Treatment,
-    color = Treatment
-  )
-) +
+df %>% 
+  filter(Treatment %in% c("A", "B", "C", "D")) %>%
+  ggplot(aes(x = Visit, y = Outcome, group = Treatment, color = Treatment)) +
   geom_line(size = 1.2) +
   scale_x_continuous(limits = c(1, 4), breaks = c(1, 2, 3, 4)) +
   scale_y_continuous(limits = c(0, 5), breaks = c(0, 2.5, 5)) +
-  scale_color_brewer(palette = "Set1") +
-  th_close +
   geom_text(
-    data = subset(
-      df,
-      Visit == "4" &
-        (
-          Treatment == "A" |
-            Treatment == "B" | Treatment == "C" | Treatment == "D"
-        )
-    ),
+    data = subset(df, Visit == "4" & (Treatment %in% c("A", "B", "C", "D"))),
     aes(label = Treatment),
     position = "nudge",
     hjust = -0.5,
@@ -144,18 +104,19 @@ If it is not possible to limit the number of comparisons to four or less groups,
 
 ```{r, preview=TRUE}
 
-ggplot(df, aes(x = Visit, y = Outcome, group = Treatment)) +
-  geom_line (
+df %>% 
+  ggplot(aes(x = Visit, y = Outcome, group = Treatment)) +
+  geom_line(
     data = transform(df, Treatment = NULL),
     aes(x = Visit, y = Outcome, group = Treatment2),
-    size = 0.65,
-    color = "darkgray"
+    size = 0.8,
+    color = "darkgray",
+    alpha = 0.45
   ) +
-  geom_line(size = 1.1, color = "red") +
+  geom_line(size = 1.2, color = "red", alpha = 0.9) +
   scale_x_continuous(limits = c(1, 4), breaks = c(1, 2, 3, 4)) +
   scale_y_continuous(limits = c(0, 5), breaks = c(0, 2.5, 5)) +
-  facet_wrap ( ~ Treatment) +
-  th_close
+  facet_wrap( ~ Treatment) 
 
 ```
 
