@@ -161,7 +161,7 @@ df %>%
 If it is not possible to limit the number of comparisons to four or less groups, consider using a panel of graphs (i.e. small multiple graphs on the same scale [@Cleveland1985; @Tufte1986]). This strategy allows all information to be presented on one graph, focusing each comparison of interest to a single panel. 
 
 
-```{r, preview=TRUE, fig.cap = "An example of using small multiples or a trellis plot. The full data is displayed in a lighter colour and is pushed in to the background. For each panel, one treatment is highlighted and put in to focus (using a stronger colour). This allows for comparisons by treatment, while introducing less cluter in to the visualisation."}
+```{r, preview=TRUE, fig.cap = "An example of using small multiples (aka a trellis plot). The full data is displayed in a transparent colour and is pushed in to the background. For each panel, one treatment is highlighted and placed in to focus (using a stronger colour). This allows for comparisons by treatment, while introducing less clutter in to the visualisation."}
 
 df %>% 
   ggplot(aes(x = Visit, y = Outcome, group = Treatment)) +
