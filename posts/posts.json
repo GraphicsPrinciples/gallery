@@ -1,6 +1,6 @@
 [
   {
-    "path": "posts/09Sept2019-clearlines/",
+    "path": "posts/2019/2019-09-10-clear-lines/",
     "title": "Clear lines, clear signal",
     "description": "\"Weniger aber besser (Less but better)\" - Dieter Rams.",
     "author": [
@@ -13,10 +13,12 @@
     "categories": [
       "line plot",
       "symbols",
-      "clarity"
+      "clarity",
+      "Rcode",
+      "example"
     ],
-    "preview": "posts/09Sept2019-clearlines/09Sept2019-clearlines_files/figure-html5/unnamed-chunk-4-1.png",
-    "last_modified": "2019-09-10T00:28:23+02:00",
+    "preview": "posts/2019/2019-09-10-clear-lines/2019-09-10-clear-lines_files/figure-html5/unnamed-chunk-4-1.png",
+    "last_modified": "2019-09-10T08:31:21+02:00",
     "preview_width": 1248,
     "preview_height": 768
   }

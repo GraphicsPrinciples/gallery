@@ -10,6 +10,8 @@ categories:
   - line plot
   - symbols
   - clarity 
+  - Rcode
+  - example
 bibliography: lit.bib
 draft: FALSE
 output:
@@ -48,9 +50,7 @@ df <- data.frame(
 
 _This post is based on the chapter “clean lines, clear signal” in the textbook by Dona Wong: “The Wall Street Journal Guide to Information Graphics: The Dos and Don'ts of Presenting Data, Facts, and Figures” [@wong2010wall]._
 
-Often we are faced with the problem of presenting comparisons of longitudinal data over many groups (e.g., multiple treatment arms, subgroup categories or individual patient time courses). It is tempting to differentiate each line by fully utilising the array of dashes and shape markers that are available within our favorite software package. But this often obscures the lines which carry the information thereby reducing clarity. 
-
-> Weniger aber besser (Less but better) - Dieter Rams.
+Often we are faced with the problem of presenting comparisons of longitudinal data over many groups (e.g., multiple treatment arms, subgroup categories or individual patient time courses). It is tempting to differentiate each line by fully utilising the array of dashes and shape markers that are available within our favorite software package. 
  
 ```{r, echo = FALSE, cap = "A line plot of six treatment time courses."}
 
@@ -61,6 +61,10 @@ df %>% ggplot(aes(x = Visit, y = Outcome, group = Treatment, color = Treatment))
   scale_y_continuous(limits = c(0, 5), breaks = c(0, 2.5, 5)) 
 
 ```
+
+But this often obscures the lines which carry the information thereby reducing clarity. 
+
+> Weniger aber besser (Less but better) - Dieter Rams.
 
 There are alternative strategies to address this problem depending on the purpose of your graph. For example, if it is possible to limit the number of comparison groups to four or less per graph then solid lines can be used exclusively. Varying weights and shades do the work of differentiating the lines removing the need for symbols and different line styles. 
 
