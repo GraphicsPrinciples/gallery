@@ -30,7 +30,8 @@ theme_set(theme_light())
 # Set seed for reproducibility 
 set.seed(65)
 
-# Generate dummy data
+# Generate dummy data - TODO: refactor this step
+# Treatment2 is added as a dummy variable to help with highlighting 
 df <- data.frame(
   Treatment = rep(c("A", "B", "C", "D", "E", "F"),
                   each = 4),
@@ -52,7 +53,9 @@ _This post is based on the chapter “clean lines, clear signal” in the textbo
 
 Often we are faced with the problem of presenting comparisons of longitudinal data over many groups (e.g., multiple treatment arms, subgroup categories or individual patient time courses). It is tempting to differentiate each line by fully utilising the array of dashes and shape markers that are available within our favorite software package. 
  
-```{r, echo = FALSE, cap = "A line plot of six treatment time courses."}
+
+ 
+```{r, fig.cap = "An example of six treatments measured by an outcome variable over time. A variation of symbols and line types are used to differentiate between treatments."}
 
 df %>% ggplot(aes(x = Visit, y = Outcome, group = Treatment, color = Treatment)) +
   geom_line(size = 1.1, aes(linetype = Treatment)) +
@@ -69,8 +72,8 @@ But this often obscures the lines which carry the information thereby reducing c
 There are alternative strategies to address this problem depending on the purpose of your graph. For example, if it is possible to limit the number of comparison groups to four or less per graph then solid lines can be used exclusively. Varying weights and shades do the work of differentiating the lines removing the need for symbols and different line styles. 
 
  
+```{r, fig.cap = "The same example displaying only the first four treatments. Lines are differentiated by line colour. A solid line type is used to ensure the 'trend' is clearly displayed by treatment. Often by using a dashed or dotted line, visual artefacts are introduced."}
 
-```{r}
 df %>% 
   filter(Treatment %in% c("A", "B", "C", "D")) %>%
   ggplot(aes(x = Visit, y = Outcome, group = Treatment, color = Treatment)) +
@@ -80,10 +83,11 @@ df %>%
 
 ```
 
-Direct labelling of each line can further support differentiation between groups when it is possible to apply without clashes. 
+Direct labeling of each line can further support differentiation between groups when it is possible to apply without clashes (to the label positioning).
 
 
-```{r}
+```{r, fig.cap = "Repeating the previous example but removing the legend. Labels are directly placed next to the line, removing the need for the reviewer to glance to and from the legend to the data display."}
+
 df %>% 
   filter(Treatment %in% c("A", "B", "C", "D")) %>%
   ggplot(aes(x = Visit, y = Outcome, group = Treatment, color = Treatment)) +
@@ -102,11 +106,62 @@ df %>%
 
 ```
 
-If it is not possible to limit the number of comparisons to four or less groups, consider using a panel of graphs (i.e. small multiple graphs on the same scale). This strategy allows all information to be presented on one graph, focusing each comparison of interest to a single panel. 
- 
+By using direct labelling we can go a step further and remove colour for differentiating between treatments without a lose in information. 
+
+```{r, fig.cap = "An example of by simplifying (i.e. removing colour), we do not remove information, and in some cases we may increase clarity."}
+
+df %>% 
+  filter(Treatment %in% c("A", "B", "C", "D")) %>%
+  ggplot(aes(x = Visit, y = Outcome, group = Treatment)) +
+  geom_line(size = 1.2, colour = "#000000", alpha = 0.8) +
+  scale_x_continuous(limits = c(1, 4), breaks = c(1, 2, 3, 4)) +
+  scale_y_continuous(limits = c(0, 5), breaks = c(0, 2.5, 5)) +
+  geom_text(
+    data = subset(df, Visit == "4" & (Treatment %in% c("A", "B", "C", "D"))),
+    aes(label = Treatment),
+    position = "nudge",
+    hjust = -0.5,
+    vjust = 0.5,
+    color = "black"
+  ) +
+  theme(legend.position = "none")
+
+```
+
+The advantage of removing colour is that we can also add it back in to serve another purpose. In the next example, we introduce colour to highlight a specific treatment. 
+
+```{r, fig.cap = "Introducing colour to emphasise a specific treatment."}
+
+df %>% 
+  filter(Treatment %in% c("A", "B", "D")) %>%
+  ggplot(aes(x = Visit, y = Outcome, group = Treatment)) +
+  geom_line(size = 1.0, colour = "#000000", alpha = 0.45) +
+    geom_line(
+    data = transform(df %>% filter(Treatment == "C")),
+    aes(x = Visit, y = Outcome, group = Treatment2),
+    size = 1.2,
+    color = "red",
+    alpha = 0.8
+  ) +
+  scale_x_continuous(limits = c(1, 4), breaks = c(1, 2, 3, 4)) +
+  scale_y_continuous(limits = c(0, 5), breaks = c(0, 2.5, 5)) +
+  geom_text(
+    data = subset(df %>% filter(Visit == "4", Treatment %in% c("A", "B", "C", "D"))),
+    aes(label = Treatment),
+    position = "nudge",
+    hjust = -0.5,
+    vjust = 0.5,
+    color = "black"
+  ) +
+  theme(legend.position = "none")
+
+```
 
 
-```{r, preview=TRUE}
+If it is not possible to limit the number of comparisons to four or less groups, consider using a panel of graphs (i.e. small multiple graphs on the same scale [@Cleveland1985; @Tufte1986]). This strategy allows all information to be presented on one graph, focusing each comparison of interest to a single panel. 
+
+
+```{r, preview=TRUE, fig.cap = "An example of using small multiples or a trellis plot. The full data is displayed in a lighter colour and is pushed in to the background. For each panel, one treatment is highlighted and put in to focus (using a stronger colour). This allows for comparisons by treatment, while introducing less cluter in to the visualisation."}
 
 df %>% 
   ggplot(aes(x = Visit, y = Outcome, group = Treatment)) +
@@ -114,8 +169,8 @@ df %>%
     data = transform(df, Treatment = NULL),
     aes(x = Visit, y = Outcome, group = Treatment2),
     size = 0.8,
-    color = "darkgray",
-    alpha = 0.45
+    color = "#000000",
+    alpha = 0.25
   ) +
   geom_line(size = 1.2, color = "red", alpha = 0.9) +
   scale_x_continuous(limits = c(1, 4), breaks = c(1, 2, 3, 4)) +
@@ -124,7 +179,9 @@ df %>%
 
 ```
 
-Below is the code required to reproduce these plots used in this post. 
+The final example using small multiples allows the complete data to be displayed as well as facilitating comparisons between one treatment versus the others. 
+
+If any of this is useful, below is the code required to reproduce these plots used in this post. 
 
 ```{r, eval=FALSE, echo=TRUE}
 library(tidyverse)
@@ -184,6 +241,48 @@ df %>%
   ) +
   theme(legend.position = "none")
 
+## direct labels without colour 
+df %>% 
+  filter(Treatment %in% c("A", "B", "C", "D")) %>%
+  ggplot(aes(x = Visit, y = Outcome, group = Treatment)) +
+  geom_line(size = 1.2, colour = "#000000", alpha = 0.8) +
+  scale_x_continuous(limits = c(1, 4), breaks = c(1, 2, 3, 4)) +
+  scale_y_continuous(limits = c(0, 5), breaks = c(0, 2.5, 5)) +
+  geom_text(
+    data = subset(df, Visit == "4" & (Treatment %in% c("A", "B", "C", "D"))),
+    aes(label = Treatment),
+    position = "nudge",
+    hjust = -0.5,
+    vjust = 0.5,
+    color = "black"
+  ) +
+  theme(legend.position = "none")
+
+## direct labels highlighting a specific treatment
+df %>% 
+  filter(Treatment %in% c("A", "B", "D")) %>%
+  ggplot(aes(x = Visit, y = Outcome, group = Treatment)) +
+  geom_line(size = 1.0, colour = "#000000", alpha = 0.45) +
+    geom_line(
+    data = transform(df %>% filter(Treatment == "C")),
+    aes(x = Visit, y = Outcome, group = Treatment2),
+    size = 1.2,
+    color = "red",
+    alpha = 0.8
+  ) +
+  scale_x_continuous(limits = c(1, 4), breaks = c(1, 2, 3, 4)) +
+  scale_y_continuous(limits = c(0, 5), breaks = c(0, 2.5, 5)) +
+  geom_text(
+    data = subset(df %>% filter(Visit == "4", Treatment %in% c("A", "B", "C", "D"))),
+    aes(label = Treatment),
+    position = "nudge",
+    hjust = -0.5,
+    vjust = 0.5,
+    color = "black"
+  ) +
+  theme(legend.position = "none")
+
+
 ## Small multiples plot
 df %>% 
   ggplot(aes(x = Visit, y = Outcome, group = Treatment)) +
@@ -191,8 +290,8 @@ df %>%
     data = transform(df, Treatment = NULL),
     aes(x = Visit, y = Outcome, group = Treatment2),
     size = 0.8,
-    color = "darkgray",
-    alpha = 0.45
+    color = "#000000",
+    alpha = 0.25
   ) +
   geom_line(size = 1.2, color = "red", alpha = 0.9) +
   scale_x_continuous(limits = c(1, 4), breaks = c(1, 2, 3, 4)) +
