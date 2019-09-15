@@ -13,7 +13,7 @@ categories:
   - Rcode
   - example
 bibliography: lit.bib
-draft: FALSE
+draft: TRUE
 output:
   radix::radix_article:
     self_contained: FALSE
