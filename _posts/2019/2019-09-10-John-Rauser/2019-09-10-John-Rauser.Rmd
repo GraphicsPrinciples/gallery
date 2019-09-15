@@ -1,0 +1,23 @@
+
+
+Online presentation - How Humans See Data by John Rauser
+By Mark Baillie (CD&A / Bios) 
+
+In the spirit of graphics principles, John Rauser presents an engaging overview on the topic including a demonstration of how to use the Cleveland-McGill ranking in practice. This corresponds to the “Effectiveness Ranking” on the Graphics Principles Cheat Sheet.
+
+The Cheat Sheet summary of the Cleveland-McGill ranking effectiveness ranking.
+
+
+The video summarizes the human visual system and how we decode visual information. Practical tips are then provided on how to apply this knowledge to design and implement effective statistical graphics. 
+
+The video can be viewed here: https://www.youtube.com/watch?v=fSgEeI2Xpdc
+
+Listen to his presentation to hear what he has to say about this:
+
+If you are interested in the reproducing the examples presented, a github repository of ggplot code is also available here: 
+
+https://github.com/jrauser/writing/blob/master/how_humans_see_data/hhsd_notes.Rmd
+
+
+
+
