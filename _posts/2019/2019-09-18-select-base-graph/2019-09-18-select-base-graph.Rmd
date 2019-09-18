@@ -12,8 +12,9 @@ categories:
   - clarity 
   - Rcode
   - example
-draft: FALSE
-output:
+draft: TRUE
+bibliography: lit.bib
+  output:
   radix::radix_article:
     self_contained: FALSE
 ---

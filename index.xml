@@ -7,7 +7,25 @@
     <description>A tutorial on effective visual communication for the quantitative scientist.
 </description>
     <generator>Radix</generator>
-    <lastBuildDate>Tue, 10 Sep 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 18 Sep 2019 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Selecting right base graph</title>
+      <dc:creator>Graphics principles</dc:creator>
+      <link>https://graphicsprinciples.github.io/posts/2019/2019-09-18-select-base-graph</link>
+      <description>"Weniger aber besser (Less but better)" - Dieter Rams.</description>
+      <guid>https://graphicsprinciples.github.io/posts/2019/2019-09-18-select-base-graph</guid>
+      <pubDate>Wed, 18 Sep 2019 00:00:00 +0000</pubDate>
+      <media:content url="https://graphicsprinciples.github.io/posts/2019/2019-09-18-select-base-graph/2019-09-18-select-base-graph_files/figure-html5/unnamed-chunk-1-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
+    <item>
+      <title>Compared to what?</title>
+      <dc:creator>Graphics principles</dc:creator>
+      <link>https://graphicsprinciples.github.io/posts/2019/2019-09-18-compared-to-what</link>
+      <description>"At the heart of quantitative reasoning is a single question: Compared to what? - Edward Tufte [@tufte1990]"</description>
+      <guid>https://graphicsprinciples.github.io/posts/2019/2019-09-18-compared-to-what</guid>
+      <pubDate>Tue, 17 Sep 2019 00:00:00 +0000</pubDate>
+      <media:content url="https://graphicsprinciples.github.io/posts/2019/2019-09-18-compared-to-what/2019-09-18-compared-to-what_files/figure-html5/unnamed-chunk-5-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
     <item>
       <title>Clear lines, clear signal</title>
       <dc:creator>Graphics principles</dc:creator>
