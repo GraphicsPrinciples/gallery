@@ -193,3 +193,12 @@ plotdata %>%
 Finally we can add additional annotations such as a description of the reference line and highlighting a specific observation that may hold a degree of importance to the analysis. We also add labels for the x and y- variables providing additional context for the revieiwer.
 
 The final example illustrates how layering visual anchors on to a plot can guide the focus of the reviewer to specific comparisons of interest such as the association between the outcome and a covairate of interest, the strength of the association (model fit) and also highlight specific observations of interest). 
+
+```{r, echo=TRUE}
+sessionInfo()
+```
+
+
+## Corrections or questions {.appendix}
+
+If you see mistakes, want to suggest changes or even ask us a question, please [create an issue](https://github.com/GraphicsPrinciples/gallery/issues) on the source repository.
