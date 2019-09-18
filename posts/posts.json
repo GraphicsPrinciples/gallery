@@ -1,8 +1,28 @@
 [
   {
+    "path": "posts/2019/2019-09-10-John-Rauser/",
+    "title": "How Humans See Data",
+    "description": "John Rauser summarises the human visual system and how we decode visual information",
+    "author": [
+      {
+        "name": "Graphics principles",
+        "url": "https://graphicsprinciples.github.io/"
+      }
+    ],
+    "date": "2019-09-18",
+    "categories": [
+      "video",
+      "principles"
+    ],
+    "preview": "posts/2019/2019-09-10-John-Rauser/images/preview.png",
+    "last_modified": "2019-09-18T21:33:51+02:00",
+    "preview_width": 1344,
+    "preview_height": 960
+  },
+  {
     "path": "posts/2019/2019-09-18-compared-to-what/",
     "title": "Compared to what?",
-    "description": "\"At the heart of quantitative reasoning is a single question: Compared to what? - Edward Tufte [@tufte1990]\"",
+    "description": "\"At the heart of quantitative reasoning is a single question: Compared to what?\" - Edward Tufte",
     "author": [
       {
         "name": "Graphics principles",
@@ -20,52 +40,9 @@
       "visual anchors"
     ],
     "preview": "posts/2019/2019-09-18-compared-to-what/2019-09-18-compared-to-what_files/figure-html5/unnamed-chunk-5-1.png",
-    "last_modified": "2019-09-18T20:38:55+02:00",
+    "last_modified": "2019-09-18T21:40:35+02:00",
     "preview_width": 1248,
     "preview_height": 768
-  },
-  {
-    "path": "posts/2019/2019-09-18-select-base-graph/",
-    "title": "Selecting right base graph",
-    "description": "\"Weniger aber besser (Less but better)\" - Dieter Rams.",
-    "author": [
-      {
-        "name": "Graphics principles",
-        "url": "https://graphicsprinciples.github.io/"
-      }
-    ],
-    "date": "2019-09-18",
-    "categories": [
-      "line plot",
-      "symbols",
-      "clarity",
-      "Rcode",
-      "example"
-    ],
-    "preview": "posts/2019/2019-09-18-select-base-graph/2019-09-18-select-base-graph_files/figure-html5/unnamed-chunk-1-1.png",
-    "last_modified": "2019-09-18T10:34:59+02:00",
-    "preview_width": 1248,
-    "preview_height": 768
-  },
-  {
-    "path": "posts/2019/2019-09-10-John-Rauser/",
-    "title": "How Humans See Data",
-    "description": "\"John Rauser summarizes the human visual system and how we decode visual information\"",
-    "author": [
-      {
-        "name": "Graphics principles",
-        "url": "https://graphicsprinciples.github.io/"
-      }
-    ],
-    "date": "2019-09-18",
-    "categories": [
-      "video",
-      "principles"
-    ],
-    "preview": "posts/2019/2019-09-10-John-Rauser/images/preview.png",
-    "last_modified": "2019-09-18T21:21:16+02:00",
-    "preview_width": 1344,
-    "preview_height": 960
   },
   {
     "path": "posts/2019/2019-09-10-clear-lines/",

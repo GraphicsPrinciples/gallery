@@ -1,7 +1,7 @@
 ---
 title: "How Humans See Data"
 description: |
-  "John Rauser summarizes the human visual system and how we decode visual information"
+  John Rauser summarises the human visual system and how we decode visual information
 author:
   - name: "Graphics principles"
     url: https://graphicsprinciples.github.io/

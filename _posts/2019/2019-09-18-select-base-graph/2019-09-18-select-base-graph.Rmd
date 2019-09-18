@@ -1,7 +1,7 @@
 ---
 title: "Selecting right base graph"
 description: |
-  "Weniger aber besser (Less but better)" - Dieter Rams.
+  .
 author:
   - name: "Graphics principles"
     url: https://graphicsprinciples.github.io/
@@ -13,10 +13,9 @@ categories:
   - Rcode
   - example
 draft: TRUE
-bibliography: lit.bib
-  output:
+output:
   radix::radix_article:
-    self_contained: FALSE
+  self_contained: FALSE
 ---
 
 ```{r setup, include=FALSE}
