@@ -27,3 +27,8 @@ If you are interested in the reproducing the examples presented, a github reposi
 ```{r, preview=TRUE, fig.cap = "Example graph from John's presentation."}
 knitr::include_graphics("images/preview.png")
 ```
+
+
+## Corrections or questions {.appendix}
+
+If you see mistakes, want to suggest changes or even ask us a question, please [create an issue](https://github.com/GraphicsPrinciples/gallery/issues) on the source repository.
