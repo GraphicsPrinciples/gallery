@@ -11,23 +11,25 @@ categories:
   - line plot
   - bar chart
   - Rcode
-  - example
+  - examples
+  - layering
+  - visual anchors
 draft: FALSE
 bibliography: lit.bib
 output:
   radix::radix_article:
     self_contained: FALSE
     toc: true
-    toc_depth: 2
+    toc_depth: 1
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = TRUE)
 
 library(tidyverse)
 library(gridExtra)
 
-# Set global theme
+# Set global ggplot theme
 theme_set(theme_light())
 
 # create a few themes for plotting. 
@@ -59,91 +61,138 @@ set.seed(1972)
 ```
 
 
-Effective visualizations communicate complex statistical and quantitative information facilitating insight, understanding, and decision making. But what is an effective graph? It is one that enables visual comparisons of data within the reviewers eye span, and adapts to the audience in a manner that best allows the key message to be understood. 
+Effective visualisations communicate complex statistical and quantitative information facilitating insight, understanding, and decision making. But what is an effective graph? It is one that enables visual comparisons of data within the reviewers eye span, and adapts to the audience in a manner that best allows the key messages to be understood. 
 
-During the design it is helpful to keep in mind the purpose – the *"Compared to what?"* [@tufte1990].
+During the design of data visualisation it is helpful to keep in mind the purpose – the *"Compared to what?"* [@tufte1990].
 
-To facilitate effective comparisons there are a number of design options which can be considered such as layering, alignment, proximity and ordering. Below is a selection of tips to consider during the design phase.
+To facilitate effective comparisons there are a number of design options in the toolbox which can be used including layering, alignment, proximity and ordering. In this post we focus on how to focus and support specific comparisons through the use of a visual hierarchy. 
 
+# Adding context through visual hierarchy 
 
-# Visual hierarchy adds context
+Utilising and layering visual anchors such as grid and reference lines, annotations and other cues can draw attention to the comparison of interest. To illustrate what we mean by anchors, consider the graph below: a stripped down scatter plot. 
 
-Utilising visual anchors such as grid and reference lines, annotations and other visual anchors can draw attention to the comparison of interest. To illustrate the point, consider the graph below which is a stripped down version of a scatter plot. 
+```{r, fig.cap= "This is an example of a bare-bones scatter plot."}
 
-```{r, fig.cap= "This is an example of a barebones scatter plot."}
 # generate data
 set.seed(1971)
 N <- 100
+
 plotdata <- tibble(x = rnorm(N, 0, 1),
                    y = rnorm(N, x, 1))
 
-# plot x vs y 
-plotdata %>% 
-  ggplot(aes(x = x, y = y)) + 
+# plot x vs y with a minimial theme
+plotdata %>%
+  ggplot(aes(x = x, y = y)) +
   geom_point(size = 3) +
   theme(
     panel.grid = element_blank(),
     axis.title = element_blank(),
     axis.text = element_blank(),
     axis.ticks = element_blank()
-    )
+  )
 ```
 
+There is not a lot of information carried in this plot. If you are quantitively trained you may automatically be comparing the relationship between the x- and y-variables, assessing if there is a (linear or non-linear) relationship by eye. You may also be on the look out for unusual observations. But without the appropriate level of contextual information we have to make various assumptions that may not hold (e.g. what scale are the observations plotted on.)
 
-If you are quantitively trained you may compare the relationship between the x- and y-variables assessing if there is a (linear) relationship by eye. You may also look at the distribution of observations to check for possible "outliers". 
+Now lets consider adding back in contextual information step by step. We can start to layer on visual anchors to meet specific goals. For example, by adding grid lines and axes we can help the reviewer identify the x- and y-values for specific observations. 
 
-We can start to layer on visual anchors to meet specific goals (the purpose of the graph). For example, adding grid lines and axes help identify the x- and y-values for specific observations. 
+```{r, fig.cap="Adding in axes and grid lines. Now it is possible to read off the values of each observation. We also know that the data is plotted on a linear scale for both axes."}
 
-```{r, fig.cap="Add grid lines"}
-plotdata %>% 
-  ggplot(aes(x = x, y = y)) + 
-  geom_point(size = 2, shape = 19, alpha = 0.35) 
+plotdata %>%
+  ggplot(aes(x = x, y = y)) +
+  geom_point(size = 2,
+             shape = 19,
+             alpha = 0.35)
 
 ```
 
-Adding a reference line helps distinguish between observations above and below the line. Adding a reference line can also facilitate assessments comparing the distance between the reference line and each observation. 
+Adding a reference line can further help distinguish between observations and also draw comparisons to the reference i.e. if an observation or how many observations are above and below the line of interesting. Adding a reference line can also facilitate assessments that compare the distance between the reference line and observation. 
 
 ```{r, fig.cap = "Adding a reference line."}
-plotdata %>% 
-  ggplot(aes(x = x, y = y)) + 
-  geom_hline(yintercept = 0.5, linetype = 1, color = "red", size = 2, alpha = 0.3) +
-  geom_point(size = 2, shape = 19, alpha = 0.35) 
+
+plotdata %>%
+  ggplot(aes(x = x, y = y)) +
+  geom_hline(
+    yintercept = 0.5,
+    linetype = 1,
+    color = "red",
+    size = 2,
+    alpha = 0.3
+  ) +
+  geom_point(size = 2,
+             shape = 19,
+             alpha = 0.35)
 
 ```
 
-We can also add a regression line to help assess the association between the x- and y- variables. In this case we add a spline. We can also add an indicator of uncertainty (in this case the standard error). This further helps determine the fit of the regression model with respect to each observation (i.e. the residuals). 
+We can also fit and display a regression to help the reviewer assess the association between the x- and y- variables. In this example, we fit a spline along with a measure of uncertainty to help assess the spline fit with respect to the data sample. 
 
-```{r, fig.cap = "Adding a regression"}
+```{r, fig.cap = "Adding a spline and uncertainty interval."}
 
-plotdata %>% 
-  ggplot(aes(x = x, y = y)) + 
-  geom_hline(yintercept = 0.5, linetype = 1, color = "red", size = 2, alpha = 0.3) +
-  geom_point(size = 2, shape = 19, alpha = 0.35) +
-  geom_smooth(method = lm, formula = y ~ splines::bs(x, 3)) 
+plotdata %>%
+  ggplot(aes(x = x, y = y)) +
+  geom_hline(
+    yintercept = 0.5,
+    linetype = 1,
+    color = "red",
+    size = 2,
+    alpha = 0.3
+  ) +
+  geom_point(size = 2,
+             shape = 19,
+             alpha = 0.35) +
+  geom_smooth(method = lm, 
+              formula = y ~ splines::bs(x, 3)) 
 ```
 
 
 
 ```{r, preview=TRUE, fig.cap= "We can add additional visual anchors to the plot to help guide the comparisons."}
-plotdata %>% 
-  ggplot(aes(x = x, y = y)) + 
-  geom_hline(yintercept = 0.5, linetype = 1, color = "red", size = 2, alpha = 0.3) +
-  geom_point(size = 2, shape = 19, alpha = 0.35) +
-  geom_smooth(method = lm, formula = y ~ splines::bs(x, 3)) + 
-  annotate(x = 1.75, y = 0.3, geom = 'text', label = "Reference line of interest") +
-  annotate(x = 1.75, y = -3.4, geom = 'text', label = "This observation is important") +
-  annotate("segment", x = 0.8, y = -3.4, xend = -0.1, yend = -3.4,
-             arrow = arrow(angle = 30, length = unit(1, "mm"), type = "closed")) +
+
+plotdata %>%
+  ggplot(aes(x = x, y = y)) +
+  geom_hline(
+    yintercept = 0.5,
+    linetype = 1,
+    color = "red",
+    size = 2,
+    alpha = 0.3
+  ) +
+  geom_point(size = 2,
+             shape = 19,
+             alpha = 0.35) +
+  geom_smooth(method = lm, 
+              formula = y ~ splines::bs(x, 3)) +
+  annotate(x = 1.75,
+           y = 0.3,
+           geom = 'text',
+           label = "Reference line of interest") +
+  annotate(
+    x = 1.75,
+    y = -3.4,
+    geom = 'text',
+    label = "This observation is important"
+  ) +
+  annotate(
+    "segment",
+    x = 0.8,
+    y = -3.4,
+    xend = -0.1,
+    yend = -3.4,
+    arrow = arrow(
+      angle = 30,
+      length = unit(1, "mm"),
+      type = "closed"
+    )
+  ) +
   xlab("Covariate [unit]") +
-  ylab("Outcome [unit]") 
+  ylab("Outcome [unit]")
 
 ```
 
-Finally we can add additional annotations such as a description of the reference line and highlighting a specific observation. We can also add labels for the x and y- variables adding in additional context. 
+Finally we can add additional annotations such as a description of the reference line and highlighting a specific observation that may hold a degree of importance to the analysis. We also add labels for the x and y- variables providing additional context for the revieiwer.
 
-The final example illustrates that by layering visual anchors we can guide the focus of the reviewer to specific comparisons of interest such as the association between the outcome and a covairate of interest, the strength of the association (model fit) and also highlight specific observations of interest). 
-
-
+The final example illustrates how layering visual anchors on to a plot can guide the focus of the reviewer to specific comparisons of interest such as the association between the outcome and a covairate of interest, the strength of the association (model fit) and also highlight specific observations of interest). 
 
 
 # Horizontal vs. vertical alignment
