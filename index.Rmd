@@ -1,6 +1,5 @@
 ---
-title: "Graph gallery"
+title: "Graph gallery - posts on visual communication"
 site: radix::radix_website
 listing: posts
 ---
-

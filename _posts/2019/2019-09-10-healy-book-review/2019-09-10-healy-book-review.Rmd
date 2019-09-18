@@ -1,0 +1,38 @@
+---
+title: "Clear lines, clear signal"
+description: |
+  "Weniger aber besser (Less but better)" - Dieter Rams.
+author:
+  - name: "Graphics principles"
+    url: https://graphicsprinciples.github.io/
+date: "`r Sys.Date()`"
+categories:
+  - line plot
+  - symbols
+  - clarity 
+  - Rcode
+  - example
+bibliography: lit.bib
+draft: TRUE
+output:
+  radix::radix_article:
+    self_contained: FALSE
+---
+  
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+Book review - Data Visualization for Social Science: A practical introduction with R and ggplot2
+Book by Kieran Healy : http://socviz.co/  
+
+Kieran Healy is a professor in sociology at Duke University. He is also affiliated with the Duke Network analysis center https://dnac.ssri.duke.edu/, and an active teacher on the principles of data visualization. He is now also author of a new online book on the subject of graphical principles written fully in R Bookdown. 
+
+His book is an excellent and clear guide for developing effective graphs, starting from the basic principles through to many hands on examples. The book also acts a quick start how to guide for R and ggplot2. 
+
+Although the book is aimed at the social sciences the content of the book and the underlying principles apply to all quantitative disciplines. For example, there is a section dedicated to the presentation of estimates and predictions from a statistical model, covering extensions to ggplot such as GGally.  
+
+An online version of the book is now available at http://socviz.co/.  Two examples are shown below.
+
+Example 1: This is an age distribution ridgeplot using the ggridges package.  The graph displays the ages of the respondents to the General Social Survey (GSS) which is a sociological survey created and regularly collected since 1972 by the University of Chicago.  The graph offers a different take on small-multiple density plots by allowing the distributions to overlap vertically to interesting effect. It is especially useful for repeated distributional measures that change in a clear direction.

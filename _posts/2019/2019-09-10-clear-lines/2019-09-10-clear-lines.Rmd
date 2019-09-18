@@ -181,7 +181,7 @@ df %>%
 
 The final example using small multiples allows the complete data to be displayed as well as facilitating comparisons between one treatment versus the others. 
 
-If any of this is useful, below is the code required to reproduce these plots used in this post. 
+If any of this is useful, below is the [code written in R](https://www.r-project.org/) for reproducing these plots used in this post along with the session information. 
 
 ```{r, eval=FALSE, echo=TRUE}
 library(tidyverse)
@@ -302,4 +302,10 @@ df %>%
 ```{r, echo=TRUE}
 sessionInfo()
 ```
+
+
+## Corrections or questions {.appendix}
+
+If you see mistakes, want to suggest changes or even ask us a question, please [create an issue](https://github.com/GraphicsPrinciples/gallery/issues) on the source repository.
+
 
