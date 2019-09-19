@@ -33,5 +33,7 @@ Although the book is aimed at the social sciences the content of the book and th
 An online version of the book is now available at [http://socviz.co/](http://socviz.co/).  
 
 
+## Corrections or questions {.appendix}
 
+If you see mistakes, want to suggest changes or even ask us a question, please [create an issue](https://github.com/GraphicsPrinciples/gallery/issues) on the source repository.
 
