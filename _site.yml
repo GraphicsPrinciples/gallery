@@ -1,7 +1,7 @@
 name: "Graphics principles"
 title: "Graph gallery"
 description: |
-  A tutorial on effective visual communication for the quantitative scientist.
+  A gathering of thoughts on visual communication.
 output_dir: "."
 base_url: https://graphicsprinciples.github.io/
 canonical_url: https://graphicsprinciples.github.io/gallery
