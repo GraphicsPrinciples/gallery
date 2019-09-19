@@ -1,7 +1,7 @@
 ---
 title: "Compared to what?"
 description: |
-  "Part 2: alignment
+  "Part 2: alignment and easing visual inspection
 author:
   - name: "Graphics principles"
     url: https://graphicsprinciples.github.io/
@@ -16,8 +16,6 @@ bibliography: lit.bib
 output:
   radix::radix_article:
     self_contained: FALSE
-    toc: true
-    toc_depth: 1
 ---
 
 ```{r setup, include=FALSE}
@@ -26,9 +24,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 
-During the design of data visualisation it is helpful to keep in mind the purpose – the *"Compared to what?"* [@tufte1990].
-
-To facilitate effective comparisons there are a number of design options in the toolbox which can be used including layering, alignment, proximity and ordering. In this post we focus on how the alignment of a comparison is an important consideration. 
+During the design of data visualisation it is helpful to keep in mind the purpose – the *"Compared to what?"* [@tufte1990]. To facilitate effective comparisons there are a number of design options in the toolbox which can be used including layering, alignment, proximity and ordering. Following on from the [previous post](https://graphicsprinciples.github.io/gallery/posts/2019/2019-09-18-compared-to-what/), we now focus on how the alignment of a comparison is an important consideration. 
 
 
 ```{r}
@@ -53,7 +49,7 @@ alignData <- tibble(
 
 # Horizontal vs. vertical alignment
 
-Alignment is another consideration for facilitating comparisons. To be more specific, a vertical comparison is often easier to make judgments on than a horizontal comparison. To illustrate, consider three point estimates and associated uncertainty intervals. 
+Alignment is another consideration for facilitating comparisons. Where appropriate, using a vertical comparison can help make judgments easier than the same comparisons horizontally aligned. To illustrate, consider three point estimates and associated uncertainty intervals. 
 
 ```{r}
 a <- alignData %>%
@@ -98,9 +94,7 @@ b <- alignData %>%
 grid.arrange(a, b, nrow = 1)
 ```
 
-When appropriate, a vertical or “downward” comparison between groups helps with assessments especially when comparing across groups. 
-
-This comes with the caveat that if the comparison is sequential or temporal (i.e. a comparison of longitudinal effects), doing so may not make sense to the reviewer; time is often encoded better by flowing left to right. 
+Back to the when appropriate caveat. If the comparison is made on data that is sequential (i.e. a comparison of longitudinal effects), doing so may confuse the reviewer; time is often encoded better by flowing left to right. 
 
 Vertical alignment of comparisons can also help with adding in contextual information such as labels. 
 
@@ -153,7 +147,7 @@ grid.arrange(a, b, nrow = 1)
 ```
 
 
-By switching the alignment of the comparison, the longer labels are able to be displayed. 
+On the left-hand side the labels blend in together. Typically this requires shortening the label length through abbreviation or by other means such as changing the angle the text direction. By switching the alignment of the comparison (i.e. flipping the coordinates), the longer labels are easier to display without modification that may impact readability.  
 
 ## Corrections or questions {.appendix}
 
