@@ -45,6 +45,14 @@
       <media:content url="https://graphicsprinciples.github.io/posts/2019/2019-09-18-compared-to-what/2019-09-18-compared-to-what_files/figure-html5/unnamed-chunk-6-1.png" medium="image" type="image/png" width="1248" height="768"/>
     </item>
     <item>
+      <title>Selecting right base graph</title>
+      <dc:creator>Graphics principles</dc:creator>
+      <link>https://graphicsprinciples.github.io/posts/2019/2019-09-18-select-base-graph</link>
+      <description>Multiple examples and code from the graphics principles cheatsheet section: selecting the right base graph.</description>
+      <guid>https://graphicsprinciples.github.io/posts/2019/2019-09-18-select-base-graph</guid>
+      <pubDate>Thu, 19 Sep 2019 00:00:00 +0000</pubDate>
+    </item>
+    <item>
       <title>Clear lines, clear signal</title>
       <dc:creator>Graphics principles</dc:creator>
       <link>https://graphicsprinciples.github.io/posts/2019/2019-09-10-clear-lines</link>
