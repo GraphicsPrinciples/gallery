@@ -4,17 +4,26 @@
     <title>Graph gallery</title>
     <link>https://graphicsprinciples.github.io/</link>
     <atom:link href="https://graphicsprinciples.github.io/index.xml" rel="self" type="application/rss+xml"/>
-    <description>A tutorial on effective visual communication for the quantitative scientist.
+    <description>A gathering of thoughts on visual communication.
 </description>
     <generator>Radix</generator>
-    <lastBuildDate>Wed, 18 Sep 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 19 Sep 2019 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Kieran Healy</title>
+      <dc:creator>Graphics principles</dc:creator>
+      <link>https://graphicsprinciples.github.io/posts/2019/2019-09-10-healy-book-review</link>
+      <description>Data Visualization for Social Science: A practical introduction with R and ggplot2.</description>
+      <guid>https://graphicsprinciples.github.io/posts/2019/2019-09-10-healy-book-review</guid>
+      <pubDate>Thu, 19 Sep 2019 00:00:00 +0000</pubDate>
+      <media:content url="https://graphicsprinciples.github.io/posts/2019/2019-09-10-healy-book-review/images/healy.png" medium="image" type="image/png" width="480" height="600"/>
+    </item>
     <item>
       <title>How Humans See Data</title>
       <dc:creator>Graphics principles</dc:creator>
       <link>https://graphicsprinciples.github.io/posts/2019/2019-09-10-John-Rauser</link>
       <description>John Rauser summarises the human visual system and how we decode visual information</description>
       <guid>https://graphicsprinciples.github.io/posts/2019/2019-09-10-John-Rauser</guid>
-      <pubDate>Wed, 18 Sep 2019 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 19 Sep 2019 00:00:00 +0000</pubDate>
       <media:content url="https://graphicsprinciples.github.io/posts/2019/2019-09-10-John-Rauser/images/preview.png" medium="image" type="image/png" width="1344" height="960"/>
     </item>
     <item>
@@ -23,8 +32,8 @@
       <link>https://graphicsprinciples.github.io/posts/2019/2019-09-18-compared-to-what</link>
       <description>"At the heart of quantitative reasoning is a single question: Compared to what?" - Edward Tufte</description>
       <guid>https://graphicsprinciples.github.io/posts/2019/2019-09-18-compared-to-what</guid>
-      <pubDate>Wed, 18 Sep 2019 00:00:00 +0000</pubDate>
-      <media:content url="https://graphicsprinciples.github.io/posts/2019/2019-09-18-compared-to-what/2019-09-18-compared-to-what_files/figure-html5/unnamed-chunk-5-1.png" medium="image" type="image/png" width="1248" height="768"/>
+      <pubDate>Thu, 19 Sep 2019 00:00:00 +0000</pubDate>
+      <media:content url="https://graphicsprinciples.github.io/posts/2019/2019-09-18-compared-to-what/2019-09-18-compared-to-what_files/figure-html5/unnamed-chunk-6-1.png" medium="image" type="image/png" width="1248" height="768"/>
     </item>
     <item>
       <title>Clear lines, clear signal</title>

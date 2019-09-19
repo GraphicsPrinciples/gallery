@@ -8,8 +8,8 @@ author:
 date: "`r Sys.Date()`"
 categories:
   - comparisons
-  - line plot
-  - bar chart
+  - scatter plot
+  - annotations
   - Rcode
   - examples
   - layering
@@ -19,45 +19,10 @@ bibliography: lit.bib
 output:
   radix::radix_article:
     self_contained: FALSE
-    toc: true
-    toc_depth: 1
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-
-library(tidyverse)
-library(gridExtra)
-
-# Set global ggplot theme
-theme_set(theme_light())
-
-# create a few themes for plotting. 
-th <- theme(
-  axis.title.x = element_blank(),
-  axis.title.y = element_blank(),
-  axis.text.x = element_blank(),
-  axis.text.y = element_blank()
-)
-thg <- theme(
-  panel.grid.major = element_line(color = "grey"),
-  panel.grid.minor = element_line(color = "grey")
-)
-th2 <- theme(axis.title.x = element_blank(),
-             axis.title.y = element_blank())
-th3 <- theme(
-  axis.title.x = element_blank(),
-  axis.text.x = element_blank(),
-  axis.title.y = element_blank()
-)
-th4 <- theme(
-  axis.title.y = element_blank(),
-  axis.text.y = element_blank(),
-  axis.title.x = element_blank()
-)
-
-# Set seed for reproducibility 
-set.seed(1972)
 ```
 
 
@@ -66,6 +31,19 @@ Effective visualisations communicate complex statistical and quantitative inform
 During the design of data visualisation it is helpful to keep in mind the purpose – the *"Compared to what?"* [@tufte1990].
 
 To facilitate effective comparisons there are a number of design options in the toolbox which can be used including layering, alignment, proximity and ordering. In this post we focus on how to focus and support specific comparisons through the use of a visual hierarchy. 
+
+```{r}
+library(tidyverse)
+library(gridExtra)
+
+# Set global ggplot theme
+theme_set(theme_light())
+
+# Set seed for reproducibility 
+set.seed(1972)
+```
+
+
 
 # Adding context through visual hierarchy 
 
@@ -167,24 +145,20 @@ plotdata %>%
            y = 0.3,
            geom = 'text',
            label = "Reference line of interest") +
-  annotate(
-    x = 1.75,
-    y = -3.4,
-    geom = 'text',
-    label = "This observation is important"
-  ) +
-  annotate(
-    "segment",
-    x = 0.8,
-    y = -3.4,
-    xend = -0.1,
-    yend = -3.4,
-    arrow = arrow(
-      angle = 30,
-      length = unit(1, "mm"),
-      type = "closed"
-    )
-  ) +
+  annotate(x = 1.75,
+           y = -3.4,
+           geom = 'text',
+           label = "This observation is important") +
+  annotate("segment",
+           x = 0.8,
+           y = -3.4,
+           xend = -0.1,
+           yend = -3.4,
+           arrow = arrow(
+             angle = 30,
+             length = unit(1, "mm"),
+             type = "closed")
+           ) +
   xlab("Covariate [unit]") +
   ylab("Outcome [unit]")
 
