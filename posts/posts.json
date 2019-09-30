@@ -1,5 +1,27 @@
 [
   {
+    "path": "posts/2019/2019-09-18-compared-to-what-part2/",
+    "title": "Compared to what?",
+    "description": "\"Part 2: alignment and easing visual inspection. Following on from the previous post on comparisons, we now focus on how the alignment of a comparison is an important consideration.",
+    "author": [
+      {
+        "name": "Graphics principles",
+        "url": "https://graphicsprinciples.github.io/"
+      }
+    ],
+    "date": "2019-09-30",
+    "categories": [
+      "comparisons",
+      "alignment",
+      "Rcode",
+      "examples"
+    ],
+    "preview": "posts/2019/2019-09-18-compared-to-what-part2/2019-09-18-compared-to-what-part2_files/figure-html5/unnamed-chunk-2-1.png",
+    "last_modified": "2019-09-30T18:10:22+02:00",
+    "preview_width": 1248,
+    "preview_height": 768
+  },
+  {
     "path": "posts/2019/2019-09-10-healy-book-review/",
     "title": "Kieran Healy",
     "description": "Data Visualization for Social Science: A practical introduction with R and ggplot2.",
@@ -42,28 +64,6 @@
     "preview_height": 960
   },
   {
-    "path": "posts/2019/2019-09-18-compared-to-what-part2/",
-    "title": "Compared to what?",
-    "description": "\"Part 2: alignment and easing visual inspection",
-    "author": [
-      {
-        "name": "Graphics principles",
-        "url": "https://graphicsprinciples.github.io/"
-      }
-    ],
-    "date": "2019-09-19",
-    "categories": [
-      "comparisons",
-      "alignment",
-      "Rcode",
-      "examples"
-    ],
-    "preview": "posts/2019/2019-09-18-compared-to-what-part2/2019-09-18-compared-to-what-part2_files/figure-html5/unnamed-chunk-2-1.png",
-    "last_modified": "2019-09-19T14:50:31+02:00",
-    "preview_width": 1248,
-    "preview_height": 768
-  },
-  {
     "path": "posts/2019/2019-09-18-compared-to-what/",
     "title": "Compared to what?",
     "description": "\"At the heart of quantitative reasoning is a single question: Compared to what?\" - Edward Tufte",
@@ -87,25 +87,6 @@
     "last_modified": "2019-09-19T08:20:44+02:00",
     "preview_width": 1248,
     "preview_height": 768
-  },
-  {
-    "path": "posts/2019/2019-09-18-select-base-graph/",
-    "title": "Selecting right base graph",
-    "description": "Multiple examples and code from the graphics principles cheatsheet section: selecting the right base graph.",
-    "author": [
-      {
-        "name": "Graphics principles",
-        "url": "https://graphicsprinciples.github.io/"
-      }
-    ],
-    "date": "2019-09-19",
-    "categories": [
-      "principles",
-      "Rcode",
-      "example"
-    ],
-    "preview": {},
-    "last_modified": "2019-09-19T15:30:55+02:00"
   },
   {
     "path": "posts/2019/2019-09-10-clear-lines/",

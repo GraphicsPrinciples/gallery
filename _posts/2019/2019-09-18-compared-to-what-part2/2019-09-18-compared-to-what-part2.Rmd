@@ -1,7 +1,7 @@
 ---
 title: "Compared to what?"
 description: |
-  "Part 2: alignment and easing visual inspection
+  "Part 2: alignment and easing visual inspection. Following on from the previous post on comparisons, we now focus on how the alignment of a comparison is an important consideration. 
 author:
   - name: "Graphics principles"
     url: https://graphicsprinciples.github.io/
@@ -24,8 +24,16 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 
-During the design of data visualisation it is helpful to keep in mind the purpose – the *"Compared to what?"* [@tufte1990]. To facilitate effective comparisons there are a number of design options in the toolbox which can be used including layering, alignment, proximity and ordering. Following on from the [previous post](https://graphicsprinciples.github.io/gallery/posts/2019/2019-09-18-compared-to-what/), we now focus on how the alignment of a comparison is an important consideration. 
+During the design of data visualisation it is helpful to keep in mind the purpose – the *"Compared to what?"* [@tufte1990]. To facilitate effective comparisons there are a number of design options in the toolbox which can be used including layering, alignment, proximity and ordering. 
 
+Following on from the [previous post](https://graphicsprinciples.github.io/gallery/posts/2019/2019-09-18-compared-to-what/), we now focus on how the alignment of a comparison is an important consideration. 
+
+
+# Horizontal vs. vertical alignment
+
+Alignment is another consideration for facilitating comparisons. Where appropriate, using a vertical comparison can help make judgments easier than the same comparisons horizontally aligned. To illustrate, consider three point estimates and associated uncertainty intervals. 
+
+First we set up R and generate the data. 
 
 ```{r}
 library(tidyverse)
@@ -46,13 +54,11 @@ alignData <- tibble(
   hi = c(3, 2, 4))
 ```
 
+We now plot the three intervals side by sided, aligned horizontally and vertically.   
 
-# Horizontal vs. vertical alignment
+```{r, fig.cap= "An example of the same plot displayed differently by rotating the axes in turn changing how the the comparisons are aligned. The left plot the comparison is made scanning left to right (and back). The right plot the comparison is made by scanning top to bottom."}
 
-Alignment is another consideration for facilitating comparisons. Where appropriate, using a vertical comparison can help make judgments easier than the same comparisons horizontally aligned. To illustrate, consider three point estimates and associated uncertainty intervals. 
-
-```{r}
-a <- alignData %>%
+left <- alignData %>%
   ggplot(aes(
     x = x,
     y = y,
@@ -71,7 +77,7 @@ a <- alignData %>%
   ggtitle("Horizontal")
 
 
-b <- alignData %>% 
+right <- alignData %>% 
   ggplot(aes(
     x = x,
     y = y,
@@ -91,17 +97,20 @@ b <- alignData %>%
   ggtitle("Vertical")
 
 # plot side by side
-grid.arrange(a, b, nrow = 1)
+grid.arrange(left, right, nrow = 1)
 ```
 
-Back to the when appropriate caveat. If the comparison is made on data that is sequential (i.e. a comparison of longitudinal effects), doing so may confuse the reviewer; time is often encoded better by flowing left to right. 
 
-Vertical alignment of comparisons can also help with adding in contextual information such as labels. 
+You *can* see that its "*easier*" to make comparisons scanning up and down than going from left to right. This is of course subjective but combined with potentially sorting comparisons by the [point estimate](https://uc-r.github.io/cleveland-dot-plots) can help guide judgments [@Cleveland1985]. 
 
-```{r}
+Now back to the "when appropriate" caveat. If the comparison(s) are made on data that is sequential (i.e. a comparison of longitudinal effects), doing so may confuse the reviewer; time is often encoded better by flowing left to right. 
+
+A final rationale for selecting a vertical alignment of comparisons is that is can help with adding in contextual information such as longer informative labels. 
+
+```{r, fig.cap= "Repeating the same plot with the addition of axis labels. Aligning the comparisons to be vertical allows for longer labels to be displayed with relative ease."}
 
 # add in axis labels
-a <-
+left <-
   alignData %>% ggplot(aes(
     x = x_lab,
     y = y,
@@ -121,7 +130,7 @@ a <-
   ggtitle("Horizontal")
 
 
-b <- alignData %>%
+right <- alignData %>%
   ggplot(aes(
     x = x_lab,
     y = y,
@@ -142,7 +151,7 @@ b <- alignData %>%
   ggtitle("Vertical")
 
 
-grid.arrange(a, b, nrow = 1)
+grid.arrange(left, right, nrow = 1)
 
 ```
 
