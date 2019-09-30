@@ -7,7 +7,16 @@
     <description>A gathering of thoughts on visual communication.
 </description>
     <generator>Radix</generator>
-    <lastBuildDate>Thu, 19 Sep 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 30 Sep 2019 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Compared to what?</title>
+      <dc:creator>Graphics principles</dc:creator>
+      <link>https://graphicsprinciples.github.io/posts/2019/2019-09-18-compared-to-what-part2</link>
+      <description>"Part 2: alignment and easing visual inspection. Following on from the previous post on comparisons, we now focus on how the alignment of a comparison is an important consideration.</description>
+      <guid>https://graphicsprinciples.github.io/posts/2019/2019-09-18-compared-to-what-part2</guid>
+      <pubDate>Mon, 30 Sep 2019 00:00:00 +0000</pubDate>
+      <media:content url="https://graphicsprinciples.github.io/posts/2019/2019-09-18-compared-to-what-part2/2019-09-18-compared-to-what-part2_files/figure-html5/unnamed-chunk-2-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
     <item>
       <title>Kieran Healy</title>
       <dc:creator>Graphics principles</dc:creator>
@@ -29,28 +38,11 @@
     <item>
       <title>Compared to what?</title>
       <dc:creator>Graphics principles</dc:creator>
-      <link>https://graphicsprinciples.github.io/posts/2019/2019-09-18-compared-to-what-part2</link>
-      <description>"Part 2: alignment and easing visual inspection</description>
-      <guid>https://graphicsprinciples.github.io/posts/2019/2019-09-18-compared-to-what-part2</guid>
-      <pubDate>Thu, 19 Sep 2019 00:00:00 +0000</pubDate>
-      <media:content url="https://graphicsprinciples.github.io/posts/2019/2019-09-18-compared-to-what-part2/2019-09-18-compared-to-what-part2_files/figure-html5/unnamed-chunk-2-1.png" medium="image" type="image/png" width="1248" height="768"/>
-    </item>
-    <item>
-      <title>Compared to what?</title>
-      <dc:creator>Graphics principles</dc:creator>
       <link>https://graphicsprinciples.github.io/posts/2019/2019-09-18-compared-to-what</link>
       <description>"At the heart of quantitative reasoning is a single question: Compared to what?" - Edward Tufte</description>
       <guid>https://graphicsprinciples.github.io/posts/2019/2019-09-18-compared-to-what</guid>
       <pubDate>Thu, 19 Sep 2019 00:00:00 +0000</pubDate>
       <media:content url="https://graphicsprinciples.github.io/posts/2019/2019-09-18-compared-to-what/2019-09-18-compared-to-what_files/figure-html5/unnamed-chunk-6-1.png" medium="image" type="image/png" width="1248" height="768"/>
-    </item>
-    <item>
-      <title>Selecting right base graph</title>
-      <dc:creator>Graphics principles</dc:creator>
-      <link>https://graphicsprinciples.github.io/posts/2019/2019-09-18-select-base-graph</link>
-      <description>Multiple examples and code from the graphics principles cheatsheet section: selecting the right base graph.</description>
-      <guid>https://graphicsprinciples.github.io/posts/2019/2019-09-18-select-base-graph</guid>
-      <pubDate>Thu, 19 Sep 2019 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>Clear lines, clear signal</title>
