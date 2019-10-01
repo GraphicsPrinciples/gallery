@@ -1,0 +1,36 @@
+---
+title: "R Graph Gallery"
+description: |
+  An online collection of graphs and charts written mainly but not exclusively written in R.
+author:
+  - name: "Graphics principles"
+    url: https://graphicsprinciples.github.io/
+date: "`r Sys.Date()`"
+categories:
+  - principles 
+  - Rcode
+  - example
+  - python
+  - d3
+draft: FALSE
+preview: "images/gallery.png"
+output:
+  radix::radix_article:
+  self_contained: FALSE
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+The [R graph gallery](https://www.r-graph-gallery.com/index.html) is a great resource for example graphs and charts written in R, with examples in d3 and python. Examples are organised in an intuitive way by the purpose of the comparison. See for yourself at [https://www.r-graph-gallery.com/index.html](https://www.r-graph-gallery.com/index.html).
+
+
+```{r, fig.cap = "Screenshot of how examples and code are intuitively organised @ https://www.r-graph-gallery.com/index.html."}
+knitr::include_graphics("images/gallery.png")
+```
+
+## Corrections or questions {.appendix}
+
+If you see mistakes, want to suggest changes or even ask us a question, please [create an issue](https://github.com/GraphicsPrinciples/gallery/issues) on the source repository.

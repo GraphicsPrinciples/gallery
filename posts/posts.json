@@ -1,5 +1,28 @@
 [
   {
+    "path": "posts/2019/2019-10-01-r-graph-gallery/",
+    "title": "R Graph Gallery",
+    "description": "An online collection of graphs and charts written mainly but not exclusively written in R.",
+    "author": [
+      {
+        "name": "Graphics principles",
+        "url": "https://graphicsprinciples.github.io/"
+      }
+    ],
+    "date": "2019-10-01",
+    "categories": [
+      "principles",
+      "Rcode",
+      "example",
+      "python",
+      "d3"
+    ],
+    "preview": "posts/2019/2019-10-01-r-graph-gallery/images/gallery.png",
+    "last_modified": "2019-10-01T09:28:41+02:00",
+    "preview_width": 1211,
+    "preview_height": 764
+  },
+  {
     "path": "posts/2019/2019-09-18-compared-to-what-part2/",
     "title": "Compared to what?",
     "description": "\"Part 2: alignment and easing visual inspection. Following on from the previous post on comparisons, we now focus on how the alignment of a comparison is an important consideration.",
