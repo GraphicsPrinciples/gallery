@@ -1,5 +1,30 @@
 [
   {
+    "path": "posts/2019/2019-09-18-compared-to-what/",
+    "title": "Compared to what?",
+    "description": "\"At the heart of quantitative reasoning is a single question: Compared to what?\" - Edward Tufte",
+    "author": [
+      {
+        "name": "Graphics principles",
+        "url": "https://graphicsprinciples.github.io/"
+      }
+    ],
+    "date": "2020-01-20",
+    "categories": [
+      "comparisons",
+      "scatter plot",
+      "annotations",
+      "Rcode",
+      "examples",
+      "layering",
+      "visual anchors"
+    ],
+    "preview": "posts/2019/2019-09-18-compared-to-what/2019-09-18-compared-to-what_files/figure-html5/unnamed-chunk-6-1.png",
+    "last_modified": "2020-01-20T09:28:25+01:00",
+    "preview_width": 1248,
+    "preview_height": 768
+  },
+  {
     "path": "posts/2019/2019-10-01-r-graph-gallery/",
     "title": "R Graph Gallery",
     "description": "An online collection of graphs and charts written mainly but not exclusively written in R.",
@@ -85,31 +110,6 @@
     "last_modified": "2019-09-19T08:15:38+02:00",
     "preview_width": 1344,
     "preview_height": 960
-  },
-  {
-    "path": "posts/2019/2019-09-18-compared-to-what/",
-    "title": "Compared to what?",
-    "description": "\"At the heart of quantitative reasoning is a single question: Compared to what?\" - Edward Tufte",
-    "author": [
-      {
-        "name": "Graphics principles",
-        "url": "https://graphicsprinciples.github.io/"
-      }
-    ],
-    "date": "2019-09-19",
-    "categories": [
-      "comparisons",
-      "scatter plot",
-      "annotations",
-      "Rcode",
-      "examples",
-      "layering",
-      "visual anchors"
-    ],
-    "preview": "posts/2019/2019-09-18-compared-to-what/2019-09-18-compared-to-what_files/figure-html5/unnamed-chunk-6-1.png",
-    "last_modified": "2019-09-19T08:20:44+02:00",
-    "preview_width": 1248,
-    "preview_height": 768
   },
   {
     "path": "posts/2019/2019-09-10-clear-lines/",

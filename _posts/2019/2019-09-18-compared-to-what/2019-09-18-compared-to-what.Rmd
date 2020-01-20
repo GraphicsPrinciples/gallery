@@ -52,7 +52,6 @@ Utilising and layering visual anchors such as grid and reference lines, annotati
 ```{r, fig.cap= "This is an example of a bare-bones scatter plot."}
 
 # generate data
-set.seed(1971)
 N <- 100
 
 plotdata <- tibble(x = rnorm(N, 0, 1),
