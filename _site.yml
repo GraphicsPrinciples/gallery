@@ -1,26 +1,30 @@
 name: "Graphics principles"
-title: "Graph gallery"
+title: "Blog"
 description: |
-  A gathering of thoughts on visual communication.
-output_dir: "."
+  Thoughts on visual communication.
 base_url: https://graphicsprinciples.github.io/
-canonical_url: https://graphicsprinciples.github.io/gallery
+canonical_url: https://graphicsprinciples.github.io/gallery/
 navbar:
   right:
     - text: "Home"
       href: https://graphicsprinciples.github.io/
+    - text: "Three laws"
+      href: https://graphicsprinciples.github.io/threelaws.html
     - text: "Tutorial"
       href: https://graphicsprinciples.github.io/tutorial.html
+    - text: "Cheat sheet"
+      href: https://graphicsprinciples.github.io/cheatsheet.html
     - text: "Case studies"
       href: https://graphicsprinciples.github.io/tutorial-case-studies
-    - text: "Gallery"
-      href: index.html
-    - text: "About"
+    - text: "Blog"
+      href: https://graphicsprinciples.github.io/gallery/
+    - text: "Initiative"
       href: https://graphicsprinciples.github.io/initiative.html
+    - text: "Resources & references"
+      href: https://graphicsprinciples.github.io/resources.html
     - icon: fab fa-github
       href: https://github.com/GraphicsPrinciples
 collections:
   posts:
     share: [twitter, linkedin]
-    citations: false
 output: radix::radix_article
