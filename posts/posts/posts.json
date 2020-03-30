@@ -1,0 +1,232 @@
+[
+  {
+    "path": "posts/2019/2019-09-18-compared-to-what/",
+    "title": "Compared to what?",
+    "description": "\"At the heart of quantitative reasoning is a single question: Compared to what?\" - Edward Tufte",
+    "author": [
+      {
+        "name": "Graphics principles",
+        "url": "https://graphicsprinciples.github.io/"
+      }
+    ],
+    "date": "2020-01-20",
+    "categories": [
+      "comparisons",
+      "scatter plot",
+      "annotations",
+      "Rcode",
+      "examples",
+      "layering",
+      "visual anchors"
+    ],
+    "preview": "posts/2019/2019-09-18-compared-to-what/2019-09-18-compared-to-what_files/figure-html5/unnamed-chunk-6-1.png",
+    "last_modified": "2020-03-27T11:21:13+01:00",
+    "preview_width": 1248,
+    "preview_height": 768
+  },
+  {
+    "path": "posts/2019/2019-10-01-r-graph-gallery/",
+    "title": "R Graph Gallery",
+    "description": "An online collection of graphs and charts written mainly but not exclusively written in R.",
+    "author": [
+      {
+        "name": "Graphics principles",
+        "url": "https://graphicsprinciples.github.io/"
+      }
+    ],
+    "date": "2019-10-01",
+    "categories": [
+      "principles",
+      "Rcode",
+      "example",
+      "python",
+      "d3"
+    ],
+    "preview": "posts/2019/2019-10-01-r-graph-gallery/images/gallery.png",
+    "last_modified": "2020-03-27T11:21:13+01:00",
+    "preview_width": 1211,
+    "preview_height": 764
+  },
+  {
+    "path": "posts/2019/2019-09-18-compared-to-what-part2/",
+    "title": "Compared to what?",
+    "description": "\"Part 2: alignment and easing visual inspection. Following on from the previous post on comparisons, we now focus on how the alignment of a comparison is an important consideration.",
+    "author": [
+      {
+        "name": "Graphics principles",
+        "url": "https://graphicsprinciples.github.io/"
+      }
+    ],
+    "date": "2019-09-30",
+    "categories": [
+      "comparisons",
+      "alignment",
+      "Rcode",
+      "examples"
+    ],
+    "preview": "posts/2019/2019-09-18-compared-to-what-part2/2019-09-18-compared-to-what-part2_files/figure-html5/unnamed-chunk-2-1.png",
+    "last_modified": "2020-03-27T11:21:13+01:00",
+    "preview_width": 1248,
+    "preview_height": 768
+  },
+  {
+    "path": "posts/2019/2019-09-10-healy-book-review/",
+    "title": "Kieran Healy",
+    "description": "Data Visualization for Social Science: A practical introduction with R and ggplot2.",
+    "author": [
+      {
+        "name": "Graphics principles",
+        "url": "https://graphicsprinciples.github.io/"
+      }
+    ],
+    "date": "2019-09-19",
+    "categories": [
+      "fundamentals",
+      "principles",
+      "Rcode",
+      "example"
+    ],
+    "preview": "posts/2019/2019-09-10-healy-book-review/images/healy.png",
+    "last_modified": "2020-03-27T11:21:13+01:00",
+    "preview_width": 480,
+    "preview_height": 600
+  },
+  {
+    "path": "posts/2019/2019-09-10-John-Rauser/",
+    "title": "How Humans See Data",
+    "description": "John Rauser summarises the human visual system and how we decode visual information",
+    "author": [
+      {
+        "name": "Graphics principles",
+        "url": "https://graphicsprinciples.github.io/"
+      }
+    ],
+    "date": "2019-09-19",
+    "categories": [
+      "video",
+      "principles"
+    ],
+    "preview": "posts/2019/2019-09-10-John-Rauser/images/preview.png",
+    "last_modified": "2020-03-27T11:21:13+01:00",
+    "preview_width": 1344,
+    "preview_height": 960
+  },
+  {
+    "path": "posts/2019/2019-09-10-clear-lines/",
+    "title": "Clear lines, clear signal",
+    "description": "\"Weniger aber besser (Less but better)\" - Dieter Rams.",
+    "author": [
+      {
+        "name": "Graphics principles",
+        "url": "https://graphicsprinciples.github.io/"
+      }
+    ],
+    "date": "2019-09-10",
+    "categories": [
+      "line plot",
+      "symbols",
+      "clarity",
+      "Rcode",
+      "example"
+    ],
+    "preview": "posts/2019/2019-09-10-clear-lines/2019-09-10-clear-lines_files/figure-html5/unnamed-chunk-6-1.png",
+    "last_modified": "2020-03-27T11:21:13+01:00",
+    "preview_width": 1248,
+    "preview_height": 768
+  },
+  {
+    "path": "posts/2019/2019-09-09-intro-vizcom/",
+    "title": "Effective visual communication",
+    "description": "A tutorial on effective visual communication for the quantitative scientist.",
+    "author": [
+      {
+        "name": "Marc Vandemeulebroecke",
+        "url": "https://graphicsprinciples.github.io/"
+      },
+      {
+        "name": "Mark Baillie",
+        "url": "https://graphicsprinciples.github.io/"
+      },
+      {
+        "name": "Alison Margolskee",
+        "url": "https://graphicsprinciples.github.io/"
+      },
+      {
+        "name": "Baldur Magnusson",
+        "url": "https://graphicsprinciples.github.io/"
+      }
+    ],
+    "date": "2019-07-22",
+    "categories": [
+      "introduction",
+      "EVC",
+      "communication"
+    ],
+    "preview": "posts/2019/2019-09-09-intro-vizcom/tutorial.png",
+    "last_modified": "2020-03-30T16:52:01+02:00",
+    "preview_width": 1102,
+    "preview_height": 382
+  },
+  {
+    "path": "posts/2019/2019-09-09-cheatsheet/",
+    "title": "Graphics Principles Cheat Sheet",
+    "description": "A concise and accessible resource for everyday practical use.",
+    "author": [
+      {
+        "name": "Marc Vandemeulebroecke",
+        "url": "https://graphicsprinciples.github.io/"
+      },
+      {
+        "name": "Mark Baillie",
+        "url": "https://graphicsprinciples.github.io/"
+      },
+      {
+        "name": "Alison Margolskee",
+        "url": "https://graphicsprinciples.github.io/"
+      },
+      {
+        "name": "Baldur Magnusson",
+        "url": "https://graphicsprinciples.github.io/"
+      }
+    ],
+    "date": "2019-03-30",
+    "categories": [
+      "cheat sheet",
+      "principles"
+    ],
+    "preview": "https://raw.githubusercontent.com/GraphicsPrinciples/GraphicsPrinciples.github.io/master/assets/2018-11-06_thumbnail.png",
+    "last_modified": "2020-03-30T16:44:33+02:00"
+  },
+  {
+    "path": "posts/2019/2019-09-09-three-laws-vizcom/",
+    "title": "Three laws of visual communication",
+    "description": "... for the quantitative scientist. Effective visual communication follows three laws: 1.)\tHave a clear purpose; 2.)\tShow the data clearly; and 3.)\tMake the message obvious. These three laws correspond to the three main ingredients of any quantitative work: purpose, data, and message. Getting these right leads to success; failing in any of them leads to overall failure.",
+    "author": [
+      {
+        "name": "Marc Vandemeulebroecke",
+        "url": "https://graphicsprinciples.github.io/"
+      },
+      {
+        "name": "Mark Baillie",
+        "url": "https://graphicsprinciples.github.io/"
+      },
+      {
+        "name": "Alison Margolskee",
+        "url": "https://graphicsprinciples.github.io/"
+      },
+      {
+        "name": "Baldur Magnusson",
+        "url": "https://graphicsprinciples.github.io/"
+      }
+    ],
+    "date": "2019-03-30",
+    "categories": [
+      "three laws",
+      "principles"
+    ],
+    "preview": "posts/2019/2019-09-09-three-laws-vizcom/Figure1b.png",
+    "last_modified": "2020-03-30T16:49:06+02:00",
+    "preview_width": 1035,
+    "preview_height": 418
+  }
+]

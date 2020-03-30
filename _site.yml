@@ -4,6 +4,7 @@ description: |
   Thoughts on visual communication.
 base_url: https://graphicsprinciples.github.io/
 canonical_url: https://graphicsprinciples.github.io/gallery/
+output_dir: "posts"
 navbar:
   right:
     - text: "Home"
