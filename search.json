@@ -1,0 +1,18 @@
+{
+  "articles": [
+    {
+      "path": "index.html",
+      "title": "Graph gallery - thoughts on visual communication",
+      "author": [],
+      "contents": "\r\n\r\n\r\n\r\n",
+      "last_modified": "2020-12-12T17:28:33+01:00"
+    },
+    {
+      "path": "README.html",
+      "author": [],
+      "contents": "\r\nGallery\r\nGraph gallery\r\n\r\n\r\n",
+      "last_modified": "2020-12-12T17:28:16+01:00"
+    }
+  ],
+  "collections": ["posts/posts.json"]
+}

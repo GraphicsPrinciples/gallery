@@ -20,7 +20,7 @@ draft: FALSE
 bibliography: biblio.bib
 preview: tutorial.png
 output:
-  radix::radix_article:
+  distill::distill_article:
     self_contained: FALSE
 ---
 

@@ -30,4 +30,4 @@ collections:
   posts:
     share: [twitter, linkedin]
     citations: false
-output: radix::radix_article
+output: distill::distill_article
