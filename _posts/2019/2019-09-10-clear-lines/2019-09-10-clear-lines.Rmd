@@ -15,7 +15,7 @@ categories:
 bibliography: lit.bib
 draft: FALSE
 output:
-  radix::radix_article:
+  distill::distill_article:
     self_contained: FALSE
 ---
 

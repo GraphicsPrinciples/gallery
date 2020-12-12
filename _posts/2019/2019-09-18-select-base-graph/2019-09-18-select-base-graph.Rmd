@@ -12,7 +12,7 @@ categories:
   - example
 draft: TRUE
 output:
-  radix::radix_article:
+  distill::distill_article:
   self_contained: FALSE
 ---
 
