@@ -15,7 +15,7 @@ website:
   #  background: "#1d467f" #"#0f366c" #"#00A38E" #"#D1F0EE"  #"#A7D5E8"
     
   navbar:
-    title: "blog"
+    title: "graphics principles"
    # background: "#1d467f"
     #logo: "assets/logo.png"
     align: center #left
@@ -52,8 +52,6 @@ format:
     toc: true
     code-copy: true
     code-overflow: wrap
-    code-fold: true
-    code-tools: true
 
 execute:
   freeze: false
