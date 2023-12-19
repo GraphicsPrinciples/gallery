@@ -26,40 +26,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 /* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
@@ -130,7 +96,7 @@ div.csl-indent {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
     <a class="navbar-brand" href="../../../index.html">
-    <span class="navbar-title">blog</span>
+    <span class="navbar-title">graphics principles</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -209,7 +175,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Three laws of visual communication</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<h1 class="title">Three laws of visual communication</h1>
   <div class="quarto-categories">
     <div class="quarto-category">three laws</div>
     <div class="quarto-category">principles</div>
@@ -294,8 +260,6 @@ div.csl-indent {
 <li><p>Always add a title to your plot. Phrase it as a conclusion, not a description (e.g.&nbsp;“plasma concentration depends on body weight” rather than “plot of plasma concentration vs.&nbsp;body weight”).</p></li>
 </ul>
 
-
-<!-- -->
 
 
 </section>
@@ -459,57 +423,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  const viewSource = window.document.getElementById('quarto-view-source') ||
-                     window.document.getElementById('quarto-code-tools-source');
-  if (viewSource) {
-    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
-    viewSource.addEventListener("click", function(e) {
-      if (sourceUrl) {
-        // rstudio viewer pane
-        if (/\bcapabilities=\b/.test(window.location)) {
-          window.open(sourceUrl);
-        } else {
-          window.location.href = sourceUrl;
-        }
-      } else {
-        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
-        modal.show();
-      }
-      return false;
-    });
-  }
-  function toggleCodeHandler(show) {
-    return function(e) {
-      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
-      for (let i=0; i<detailsSrc.length; i++) {
-        const details = detailsSrc[i].parentElement;
-        if (show) {
-          details.open = true;
-        } else {
-          details.removeAttribute("open");
-        }
-      }
-      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
-      const fromCls = show ? "hidden" : "unhidden";
-      const toCls = show ? "unhidden" : "hidden";
-      for (let i=0; i<cellCodeDivs.length; i++) {
-        const codeDiv = cellCodeDivs[i];
-        if (codeDiv.classList.contains(fromCls)) {
-          codeDiv.classList.remove(fromCls);
-          codeDiv.classList.add(toCls);
-        } 
-      }
-      return false;
-    }
-  }
-  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
-  if (hideAllCode) {
-    hideAllCode.addEventListener("click", toggleCodeHandler(false));
-  }
-  const showAllCode = window.document.getElementById("quarto-show-all-code");
-  if (showAllCode) {
-    showAllCode.addEventListener("click", toggleCodeHandler(true));
-  }
   function tippyHover(el, contentFn) {
     const config = {
       allowHTML: true,
@@ -663,91 +576,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Three laws of visual communication"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">description:</span><span class="co"> "for the quantitative scientist. Effective visual communication follows three laws: 1.)    Have a clear purpose; 2.)   Show the data clearly; and 3.)  Make the message obvious. These three laws correspond to the three main ingredients of any quantitative work: purpose, data, and message. Getting these right leads to success; failing in any of them leads to overall failure."</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">  - name: "Marc Vandemeulebroecke"  </span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">    url: https://graphicsprinciples.github.io/</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">  - name: "Mark Baillie"</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">    url: https://graphicsprinciples.github.io/</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">  - name: "Alison Margolskee"</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">    url: https://graphicsprinciples.github.io/</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">  - name: "Baldur Magnusson"</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">    url: https://graphicsprinciples.github.io/</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> today</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="an">bibliography:</span><span class="co"> refs.bib</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co">  - three laws</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co">  - principles</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> "../../../assets/logo.png"</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="an">draft:</span><span class="co"> false</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="fu">## Law 1: Have a clear purpose</span></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>Why? <span class="co">[</span><span class="ot">@sinek2009start; @Bonate2014</span><span class="co">]</span> What is the purpose of this display or that communication? Doumont <span class="co">[</span><span class="ot">@Doumont2002</span><span class="co">]</span> states this as the “zeroth law” of professional communication, “a principle so obvious that it had long been overlooked”. Be clear and explicit about what you want to achieve. Is it to explore some data, to convey an inferential analysis, to deliver a message, convince an audience, or support a decision? It may be a mixture of these – for example, even seemingly simple exploratory plots should serve some (perhaps implicit) decision (e.g. on how to explore further). Every graph, and more generally every communication, must be tailored to its specific purpose.</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>It helps to carve out the scientific question you are trying to address, ideally in discussion with partners, and to write it down explicitly. Try not to look at any data before. This is the concept of “question-based visualizations”<span class="co">[</span><span class="ot">@Vandemeulebroecke2019</span><span class="co">]</span>: let the scientific question determine what data to display and how. (For example, combine data from different domains if it helps address the question effectively. Do not only produce standard outputs by data domain – a display should be determined by the question it addresses, not by the way the data is organized.). As Diggle <span class="co">[</span><span class="ot">@Diggle2018</span><span class="co">]</span> put it, we “analyze problems, not data”. This does not mean that the question could not be refined after seeing the data. We may well iterate over the problem space and the solution space – as long as we do it consciously. Senn <span class="co">[</span><span class="ot">@senn2008statistical</span><span class="co">]</span> illustrates many examples of wrongly framed research questions. A common one is to focus on the wrong comparison, such as comparing a post-treatment value to the corresponding baseline value instead of to the value under a control treatment. Most quantitative graphs display comparisons <span class="co">[</span><span class="ot">@Gelman2002</span><span class="co">]</span>, and it always helps to ask “compared to what?” <span class="co">[</span><span class="ot">@Tufte1986</span><span class="co">]</span>. If the comparison is not clear to the author, it will also not be clear to the reader.</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>Part of this first law (and of the third, see below) is also to be clear about your audience. Then, to adapt to your audience. Do not assume it will adapt to you. You cannot control your audience, but you can control what information and messages you deliver to it, and how. Is your audience just you (trying to see patterns in data), you in a few years (trying to remember what you did), quantitative experts such as your peers (interested in your methods), subject matter experts (eager for your main message), decision-makers (headlines only), or a mixture of these? Your visual communication will need to be different accordingly. Your communication (plot, presentation, report) is for the audience, not for you.</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>Clarity on the purpose and the scientific question of interest will help choose appropriate quantitative methods to address them. This, plus clarity on your audience, will help define the key messages and how to deliver them. (On the aspect of delivery see also Law 3 below.)</span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>Of note, this first law is so important that it may occasionally defy other good principles. If your primary goal is to catch attention, then you may choose an iconic graphical representation that does this well, even if it violates some of the recommendations given further below <span class="co">[</span><span class="ot">@Gelman2013</span><span class="co">]</span>. However, you should never distort the data.</span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="fu">## Law 2: Show the data clearly</span></span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>This is Tufte’s maxim <span class="co">[</span><span class="ot">@Tufte1986</span><span class="co">]</span>: “Above all else, show the data”. Show it accurately and clearly. This law has several faces:</span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Simplify! “Simplify to clarify” <span class="co">[</span><span class="ot">@Wong2010</span><span class="co">]</span>. It is the prime task of quantitative scientists to make the complex simple: reveal structure in data through models, make inference through analyses, distill and convey conclusions through (visual) communication. Choose the simplest appropriate graph type; prefer familiar designs over fancy ones (see also the Cleveland-McGill effectiveness ranking in Law 3 below). Avoid fake dimensions. Make your plot “as simple as it can be, but not simpler” (attributed to Albert Einstein; also “Occam’s razor” or the law of parsimony). “Understand, edit and simplify the information and design with your readers in mind” <span class="co">[</span><span class="ot">@wong2010wall</span><span class="co">]</span>. Do not be confused: it is hard to make things simple. This is an iterative process: “edit and revise” <span class="co">[</span><span class="ot">@Tufte1986</span><span class="co">]</span>, and repeat. </span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Maximize the data-to-ink ratio (also “data density index” <span class="co">[</span><span class="ot">@Tufte1986</span><span class="co">]</span>) within reason. Maximize the signal over the noise by removing the noise: remove anything that distracts from the purpose of the graph. Nothing is neutral: the choice of symbols or colors, background, fonts, line style, annotations. These elements are noise if they do not serve a clear purpose. Choose them wisely and parsimoniously; make the data stand out. Do not trust defaults in graphical software packages. Often, intelligent use of white space can structure a display better than a lot of ink. (The same holds for tables: these are often most effectively structured by reserving black lines for the horizontal direction and using simple alignment in the vertical direction.) Never clutter your graph with “chart junk” <span class="co">[</span><span class="ot">@Tufte1997</span><span class="co">]</span>. </span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Display the relevant data directly. In a quantitative workflow, this often means to look at the raw data and not just rely on summary statistics. Cabanski8 illustrates this with nine datasets that show completely different patterns despite identical marginal means, standard deviations and correlation coefficients (see also Anscombe <span class="co">[</span><span class="ot">@Anscombe1973</span><span class="co">]</span> and Matejka and Fitzmaurice <span class="co">[</span><span class="ot">@Matejka2017</span><span class="co">]</span>). Ask yourself what is the best way of summarizing the relevant features of the data; it may not be the mean +/- standard error. When fitting a (statistical, compartmental, mechanistic etc.) model to the data to draw inference or make predictions, model-derived quantities may be the relevant data to display. In this case a plot of the raw data may be misleading if it does not account for important covariates. In a final communication, display concisely what best supports your message (see also below, Law 3).</span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=FALSE}</span></span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: Figure 1</span></span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Figure 1 illustrates some aspects of this second law. Wainer [@Wainer1984] has turned this law around, noting that “methods for displaying data badly have been developed for many years, and a wide variety of interesting and inventive schemes have emerged”. He provides 12 highly amusing rules for “how to display data badly”, with striking examples. He then concludes more seriously: “The rules for good display are quite simple. Examine the data carefully enough to know what they have to say, and then let them say it with a minimum of adornment. Do this while following reasonable regularity practices in the depiction of scale, and label clearly and fully."</span></span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"Figure1b.png"</span>)</span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a><span class="fu">## Law 3: Make the message obvious</span></span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>If the second law focused on the data (with a tendency to reduce noise), then the third is all about the message (and amplifying the signal). This assumes that you do have a message to tell, and that this message is clear at least to yourself. If there is any doubt on this, return to the first law.</span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>The third law mandates to make your message as obvious as possible. Quoting Krzywinski and Cairo <span class="co">[</span><span class="ot">@Krzywinski2013</span><span class="co">]</span>, “inviting readers to draw their own conclusions is risky”. Do not only make your message easy to get. Make it impossible to miss. This extends beyond graphical elements and involves all aspects of communication.</span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>Clarity on your audience, mentioned already in the first law, is also a prerequisite for the third. It is needed for carving out the message to tell (Law 1) and for adapting its way of delivery (Law 3). </span>
-<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>Specific examples for the third law include the following:</span>
-<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>Choose wisely how to encode the data you display. Color and area are good for drawing attention, but a viewer can decode positions on a common scale much more easily and accurately. Consider the effectiveness ranking of graphical attributes for encoding numerical values, as proposed by Cleveland and McGill <span class="co">[</span><span class="ot">@Cleveland1985; @Cleveland1984; Cleveland.McGill1984; Cleveland1987; @Cleveland.McGill1985</span><span class="co">]</span> (see also Cairo <span class="co">[</span><span class="ot">@Cairo:2016</span><span class="co">]</span>, Munzner <span class="co">[</span><span class="ot">@munzner2015visualization</span><span class="co">]</span>, and Heer and Bostock <span class="co">[</span><span class="ot">@Heer:2010</span><span class="co">]</span>). See <span class="co">[</span><span class="ot">here</span><span class="co">](https://flowingdata.com/2010/03/20/graphical-perception-learn-the-fundamentals-first/)</span> for an overview of this ranking. </span>
-<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>Exploit pre-attentive processing as much as possible <span class="co">[</span><span class="ot">@Few:2012; @Ware:2004</span><span class="co">]</span>. Some graphical features “jump to the eye” while others require careful inspection. Consider this in your choice of how to encode the data (Cleveland-McGill effectiveness ranking, see above) and in your choice of symbols, colors, line types etc. See <span class="co">[</span><span class="ot">here</span><span class="co">](http://daydreamingnumbers.com/blog/preattentive-attributes-example/)</span> for an illustration.</span>
-<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>Avoid mental arithmetic. If differences or ratios are the main interest, show them directly. If both raw values and differences are of interest, consider showing both.</span>
-<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>Exploit the principles of visual grouping <span class="co">[</span><span class="ot">@Wong2010PointsOV</span><span class="co">]</span>. Graphical entities are most effectively grouped by enclosure, connection, proximity and similarity (in this order). That is, similar objects are perceived as belonging together, as are objects close to each other, connected by lines, or enclosed in a common subspace. See Figure 3 for an illustration: these mechanisms can provide contextual information to a plot in a simple yet powerful way.</span>
-<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>Minimize the viewer’s eye movement. Place elements that are to be compared close to each other. Prefer direct labelling over a legend. See also <span class="co">[</span><span class="ot">here</span><span class="co">](https://www.storytellingwithdata.com/?offset=1531087200576)</span>.</span>
-<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>Draw the reader’s attention to the main points. Use appropriate graphical features (e.g. bold or colored highlighting, reference lines, circling etc.). Follow up with explicit labelling (e.g. “treatment A outperforms treatment B by X%”).</span>
-<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>Add meaningful information to a graph to tell the whole story. E.g., include reference lines, benchmark effects, inferences etc.</span>
-<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>Use effective redundancy. Convey the same message through multiple channels, to amplify it and give the audience a second chance to get it. Use words and pictures in unison <span class="co">[</span><span class="ot">@doumont2009trees</span><span class="co">]</span>. E.g., in addition to showing the data, consider annotating the “good” or “bad” axis direction, and state what is seen in plain words. Do not confuse redundancy (pointlessly cluttering the graph) with effective redundancy (conveying a message through multiple complementary channels).</span>
-<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>Let every plot stand on its own. Use informative labels and captions, and explain abbreviations. Do not require the reader to search through text in order to understand a figure.</span>
-<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Always add a title to your plot. Phrase it as a conclusion, not a description (e.g. “plasma concentration depends on body weight” rather than “plot of plasma concentration vs. body weight”).  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div></div></div></div></div>
+</script>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

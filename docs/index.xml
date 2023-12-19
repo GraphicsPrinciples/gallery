@@ -35,8 +35,6 @@
 <p>The full version is <a href="https://graphicsprinciples.github.io">available</a> along with corresponding <a href="https://github.com/GraphicsPrinciples/CheatSheet">programming code in R</a>.</p>
 
 
-<!-- -->
-
 </section>
 
  ]]></description>
@@ -81,8 +79,6 @@
 <p>The full published tutorial can is available and online at <a href="https://ascpt.onlinelibrary.wiley.com/doi/10.1002/psp4.12455">CPT:PSP here</a>.</p>
 <p>A pre-print of the complete tutorial can also be found at: https://arxiv.org/abs/1903.09512</p>
 
-
-<!-- -->
 
 
 </section>
@@ -219,8 +215,6 @@ Wong, D. M. 2010. <em>The Wall Street Journal Guide to Information Graphics: The
 </ul>
 
 
-<!-- -->
-
 
 </section>
 
@@ -335,8 +329,6 @@ Wong, D. M. 2010. <em>The Wall Street Journal Guide to Information Graphics: The
 <p>The video can be <a href="https://www.youtube.com/watch?v=fSgEeI2Xpdc">viewed on youtube</a>.</p>
 
 
-<!-- -->
-
 
  ]]></description>
   <category>video</category>
@@ -426,8 +418,6 @@ Wong, D. M. 2010. <em>The Wall Street Journal Guide to Information Graphics: The
 <p>The final example using small multiples allows the complete data to be displayed as well as facilitating comparisons between one treatment versus the others.</p>
 <p>If any of this is useful, below is the <a href="https://www.r-project.org/">code written in R</a> for reproducing these plots used in this post along with the session information.</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">library</span>(tidyverse)</span>
@@ -1433,11 +1423,8 @@ background-color: null;
 font-style: inherit;">facet_wrap</span>( <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">~</span> Treatment) </span></code></pre></div>
-</details>
 </div>
 
-
-<!-- -->
 
 
 
@@ -1482,8 +1469,6 @@ Wong, Dona M. 2010. <em>The Wall Street Journal Guide to Information Graphics: T
 <p>Although the book is aimed at the social sciences the content of the book and the underlying principles apply to all quantitative disciplines. For example, there is a section dedicated to the presentation of estimates and predictions from a statistical model, covering extensions to ggplot such as GGally.</p>
 <p>An online version of the book is now available at <a href="http://socviz.co/">http://socviz.co/</a>.</p>
 
-
-<!-- -->
 
 
  ]]></description>
@@ -1534,8 +1519,6 @@ Wong, Dona M. 2010. <em>The Wall Street Journal Guide to Information Graphics: T
 </div>
 <p>On the left-hand side the labels blend in together. Typically this requires shortening the label length through abbreviation or by other means such as changing the angle the text direction. By switching the alignment of the comparison (i.e.&nbsp;flipping the coordinates), the longer labels are easier to display without modification that may impact readability.</p>
 
-
-<!-- -->
 
 
 </section>
@@ -1644,8 +1627,6 @@ Tufte, Edward R. 1990. <em>Envisioning Information</em>. Cheshire, Conn.: Graphi
 </div>
 
 
-<!-- -->
-
 
 </section>
 
@@ -1733,8 +1714,6 @@ Tufte, Edward R. 1990. <em>Envisioning Information</em>. Cheshire, Conn.: Graphi
 <p>The final example illustrates how layering visual anchors on to a plot can guide the focus of the reviewer to specific comparisons of interest such as the association between the outcome and a covairate of interest, the strength of the association (model fit) and also highlight specific observations of interest).</p>
 
 
-<!-- -->
-
 
 </section>
 
@@ -1766,8 +1745,6 @@ Tufte, Edward R. 1990. <em>Envisioning Information</em>. Cheshire, Conn.: Graphi
 <h2 class="anchored" data-anchor-id="deviation-i.e.-change-from-baseline">Deviation (i.e.&nbsp;change from baseline)</h2>
 <p>Example graphs for displaying deviations from a common reference point or baseline include line plots displaying change from baseline or a diverging barchart such as a waterfall plot.</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># generate data and plot with a minimal theme</span></span>
@@ -1977,7 +1954,6 @@ font-style: inherit;">panel.grid.major =</span> <span class="fu" style="color: #
 background-color: null;
 font-style: inherit;">element_blank</span>()</span>
 <span id="cb1-27">  )</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
 ℹ Please use `linewidth` instead.</code></pre>
@@ -1992,8 +1968,6 @@ font-style: inherit;">element_blank</span>()</span>
 </div>
 </div>
 <div class="cell" data-preview="true">
-<details>
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><span class="do" style="color: #5E5E5E;
 background-color: null;
 font-style: italic;">## generate data</span></span>
@@ -2155,7 +2129,6 @@ font-style: inherit;">axis.title.y =</span> <span class="fu" style="color: #4758
 background-color: null;
 font-style: inherit;">element_blank</span>()</span>
 <span id="cb3-27">  )</span></code></pre></div>
-</details>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -2170,8 +2143,6 @@ font-style: inherit;">element_blank</span>()</span>
 <h1>Correlation</h1>
 <p>For displaying the relationship between them two or more variables, x-y displays such as scatter plots and heatmaps are useful starting points.</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">tibble</span>(<span class="at" style="color: #657422;
@@ -2312,7 +2283,6 @@ font-style: inherit;">axis.text.y =</span> <span class="fu" style="color: #4758A
 background-color: null;
 font-style: inherit;">element_blank</span>()</span>
 <span id="cb4-18">  )</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-stderr">
 <pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
 </div>
@@ -2326,8 +2296,6 @@ font-style: inherit;">element_blank</span>()</span>
 </div>
 </div>
 <div class="cell">
-<details>
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1">mydata <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> mtcars[, <span class="fu" style="color: #4758AB;
@@ -2633,7 +2601,6 @@ font-style: inherit;">legend.direction =</span> <span class="st" style="color: #
 background-color: null;
 font-style: inherit;">"horizontal"</span></span>
 <span id="cb6-59">  )</span></code></pre></div>
-</details>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -2648,8 +2615,6 @@ font-style: inherit;">"horizontal"</span></span>
 <h1>Ranking</h1>
 <p>Bar charts and dot plots are effective for disaplying quantities ordered highest to lowest (or vice versa).</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1">my_data <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
@@ -2779,7 +2744,6 @@ font-style: inherit;">axis.text.y=</span><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">element_blank</span>()</span>
 <span id="cb7-17">  )</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: The `size` argument of `element_line()` is deprecated as of ggplot2 3.4.0.
 ℹ Please use the `linewidth` argument instead.</code></pre>
@@ -2787,8 +2751,6 @@ font-style: inherit;">element_blank</span>()</span>
 <div class="cell-output-display">
 <p><img src="https://graphicsprinciples.github.io/posts/2019/2019-09-18-select-base-graph/2019-09-18-select-base-graph_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
 </div>
-<details>
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1">df <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
@@ -2959,7 +2921,6 @@ font-style: inherit;">axis.text=</span><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">element_blank</span>()</span>
 <span id="cb9-18">  )</span></code></pre></div>
-</details>
 <div class="cell-output-display">
 <p><img src="https://graphicsprinciples.github.io/posts/2019/2019-09-18-select-base-graph/2019-09-18-select-base-graph_files/figure-html/unnamed-chunk-5-2.png" class="img-fluid" width="672"></p>
 </div>
@@ -2969,8 +2930,6 @@ font-style: inherit;">element_blank</span>()</span>
 <h1>Distribution</h1>
 <p>Histograms, density plots, boxplots and violin plots are common displays for visualising the distribution of a variable.</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><span class="do" style="color: #5E5E5E;
 background-color: null;
 font-style: italic;">### dummy data generation</span></span>
@@ -3260,12 +3219,9 @@ font-style: inherit;">panel.background =</span> <span class="fu" style="color: #
 background-color: null;
 font-style: inherit;">element_blank</span>()</span>
 <span id="cb10-47">  )  </span></code></pre></div>
-</details>
 <div class="cell-output-display">
 <p><img src="https://graphicsprinciples.github.io/posts/2019/2019-09-18-select-base-graph/2019-09-18-select-base-graph_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
 </div>
-<details>
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">set.seed</span>(<span class="dv" style="color: #AD0000;
@@ -3434,7 +3390,6 @@ font-style: inherit;">panel.border =</span> <span class="fu" style="color: #4758
 background-color: null;
 font-style: inherit;">element_blank</span>()</span>
 <span id="cb11-20">  )</span></code></pre></div>
-</details>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: The dot-dot notation (`..density..`) was deprecated in ggplot2 3.4.0.
 ℹ Please use `after_stat(density)` instead.</code></pre>
@@ -3448,8 +3403,6 @@ font-style: inherit;">element_blank</span>()</span>
 <h1>Change over time (i.e.&nbsp;evolution)</h1>
 <p>Line plots can be used for displaying how quantities evolve over time.</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1">fit <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
@@ -3527,12 +3480,9 @@ font-style: inherit;">panel.background =</span> <span class="fu" style="color: #
 background-color: null;
 font-style: inherit;">element_blank</span>()</span>
 <span id="cb13-11">  ) </span></code></pre></div>
-</details>
 <div class="cell-output-display">
 <p><img src="https://graphicsprinciples.github.io/posts/2019/2019-09-18-select-base-graph/2019-09-18-select-base-graph_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
 </div>
-<details>
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb14" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">#make data</span></span>
@@ -3714,7 +3664,6 @@ font-style: inherit;">5</span>)) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
 <span id="cb14-23">  th_con</span></code></pre></div>
-</details>
 <div class="cell-output-display">
 <p><img src="https://graphicsprinciples.github.io/posts/2019/2019-09-18-select-base-graph/2019-09-18-select-base-graph_files/figure-html/unnamed-chunk-7-2.png" class="img-fluid" width="672"></p>
 </div>
@@ -3724,8 +3673,6 @@ font-style: inherit;">+</span></span>
 <h1>Part-to-whole</h1>
 <p>For displaying sub‐divisions of a whole (e.g.&nbsp;the percentage of patients in a subgroup), pie charts, bar charts and stacked barcharts can be used.</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb15" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># Generate data</span></span>
@@ -3908,12 +3855,9 @@ background-color: null;
 font-style: inherit;">axis.title.y=</span><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">element_blank</span>())</span></code></pre></div>
-</details>
 <div class="cell-output-display">
 <p><img src="https://graphicsprinciples.github.io/posts/2019/2019-09-18-select-base-graph/2019-09-18-select-base-graph_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
 </div>
-<details>
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb16" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">data</span>(business)</span>
@@ -3964,7 +3908,6 @@ background-color: null;
 font-style: inherit;">fontsize.title =</span> <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">0</span>)</span></code></pre></div>
-</details>
 <div class="cell-output-display">
 <p><img src="https://graphicsprinciples.github.io/posts/2019/2019-09-18-select-base-graph/2019-09-18-select-base-graph_files/figure-html/unnamed-chunk-8-2.png" class="img-fluid" width="672"></p>
 </div>
@@ -3974,8 +3917,6 @@ font-style: inherit;">0</span>)</span></code></pre></div>
 <h1>Magnitude</h1>
 <p>Dotplots, forest plots and barcharts are useful for displaying comparisons of size or magnitude (i.e.&nbsp;treatment differences)</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb17" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1">df <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
@@ -4157,12 +4098,9 @@ background-color: null;
 font-style: inherit;">axis.title.y=</span><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">element_blank</span>())</span></code></pre></div>
-</details>
 <div class="cell-output-display">
 <p><img src="https://graphicsprinciples.github.io/posts/2019/2019-09-18-select-base-graph/2019-09-18-select-base-graph_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
 </div>
-<details>
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb18" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">theme_set</span>(<span class="fu" style="color: #4758AB;
@@ -4295,14 +4233,11 @@ font-style: inherit;">+</span> </span>
 <span id="cb18-16">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">coord_flip</span>()</span></code></pre></div>
-</details>
 <div class="cell-output-display">
 <p><img src="https://graphicsprinciples.github.io/posts/2019/2019-09-18-select-base-graph/2019-09-18-select-base-graph_files/figure-html/unnamed-chunk-9-2.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 
-
-<!-- -->
 
 </section>
 
@@ -4333,8 +4268,6 @@ font-style: inherit;">coord_flip</span>()</span></code></pre></div>
 </div>
 </div>
 
-
-<!-- -->
 
 
  ]]></description>
