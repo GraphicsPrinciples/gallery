@@ -1,5 +1,0 @@
----
-title: "Graph gallery - thoughts on visual communication"
-site: distill::distill_website
-listing: posts
----

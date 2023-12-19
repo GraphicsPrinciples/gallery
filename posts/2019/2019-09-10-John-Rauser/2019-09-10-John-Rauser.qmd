@@ -1,0 +1,31 @@
+---
+title: "How Humans See Data"
+description: "John Rauser summarises the human visual system and how we decode visual information"
+author:
+  - name: "Graphics principles"
+    url: https://graphicsprinciples.github.io/
+date: today
+categories:
+  - video
+  - principles
+draft: FALSE
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/fSgEeI2Xpdc?si=u_FMbTMrjKkMKDgV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+
+John Rauser presents an engaging overview on the topic of good graphical principles, including an excellent demonstration of how to use the Cleveland-McGill ranking in practice. The presentation summarises the human visual system and how we decode visual information. Practical tips are then provided on how to apply this knowledge to design and implement effective statistical graphics. 
+
+If you are interested in the reproducing the examples presented, a github repository of ggplot code is also [available](https://github.com/jrauser/writing/blob/master/how_humans_see_data/hhsd_notes.Rmd).
+
+```{r, preview=TRUE, fig.cap = "Example graph from John's presentation."}
+knitr::include_graphics("images/preview.png")
+```
+
+The video can be [viewed on youtube](https://www.youtube.com/watch?v=fSgEeI2Xpdc).

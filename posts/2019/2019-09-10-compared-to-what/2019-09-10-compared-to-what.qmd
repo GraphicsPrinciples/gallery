@@ -1,0 +1,63 @@
+---
+title: "Untitled"
+output: html_document
+draft: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Featured Article - Compared to what?
+By Baldur Magnusson, Mark Baillie and Alison Margolskee (CD&A / Biostatistics and PMX)
+
+"At the heart of quantitative reasoning is a single question: Compared to what?"
+Edward Tufte (1990). Envisioning Information
+
+Effective visualizations communicate complex statistical and quantitative information facilitating insight, understanding, and decision making. But what is an effective graph? It is one that enables visual comparisons of data within the reviewers eye span, and adapts to the audience in a manner that best allows the key message to be understood.
+
+During the design it is helpful to keep in mind the purpose – the "Compared to what?" 
+
+To facilitate effective comparisons there are a number of design options which can be considered such as layering, alignment, proximity and ordering. Below is a selection of tips to consider during the design phase.
+	Visual anchors
+Visual hierarchy adds context. Draw attention to the comparison by utilizing grid lines, reference lines and other visual anchors.
+ 
+→	 
+Changes: Grid lines and a reference line add visual anchors and context for the reviewer.
+
+	Horizontal vs. vertical alignment
+Alignment is important – for example a vertical comparison makes it easier to make judgments than a horizontal comparison. 
+ 
+→	 
+Changes: Axes were flipped to facilitate a vertical or “downward” comparison between groups.
+
+	Overlaying
+When comparing few factors (e.g. 2-3), consider overlaying in the same plot. 
+ 
+→	 
+Changes: The two distributions are overlaid on the same graph and color added for further differentiation. 
+
+	Distance
+Keep things that are to be compared close together. 
+Within study comparison:
+ 
+→	Across study comparison:
+ 
+Changes: Study moved to x-axis and treatment group to the panel to allow comparison within treatment across study. Note: if the comparison of interest is A vs. B within study then the left plot would be more appropriate; keep in mind the “compared to what?”
+
+	Ordering
+Ordering by values presented is helpful for comparing many categories.
+ 
+→	 
+Changes: Factors ordered by observed value, largest to smallest. 
+
+	Difference – do the math
+Show the difference where applicable (e.g. plot the mean difference rather than two means) to avoid the reviewer doing so. 
+ 
+→	 
+		
+ 
+→	 
+Changes: The difference to placebo is computed and shown directly for each treatment group. Note: it is a matter of judgement whether the difference is of prime interest (so the right graphs are more appropriate) or whether each group is also of interest in its own right (in which case the left graphs may be considered, or a combination of both).
+
+The code to produce all the above plots is available in a vignette on sharepoint 
